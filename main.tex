@@ -1,0 +1,68 @@
+%\input{0-style/setup}
+\documentclass[pdftex,10pt,b4paper,twoside]{article}  % mulig endre til oneside
+\usepackage{0-style/setup}
+%\addbibresource{References/ref-teori.bib} %Legge til flere sånne filer om nødvendig
+\addbibresource{references.bib}
+
+\begin{document}
+% ------------------------------------------
+% ---------- Preamble, TOC, title ----------
+% ------------------------------------------
+
+%\begin{comment}
+\pagenumbering{gobble}
+\input{0-style/title} 
+\frontmatter
+\newpage
+\input{0-Preamble+/abstract}
+\newpage
+\input{0-Preamble+/sammendrag}
+\newpage
+\input{0-Preamble+/preface}
+\newpage
+%\end{comment}
+
+\tableofcontents
+
+\newpage
+\listoffigures
+\newpage
+\listoftables
+
+
+\addcontentsline{toc}{section}{Acronyms}
+\printglossary[type=\acronymtype]
+\printglossary
+
+
+\newpage
+\listoftodos 
+
+
+% ------------------------------
+% ---------- Sections ----------
+% ------------------------------
+\mainmatter
+
+\input{Disp}
+
+
+% ----------------------------------
+% ---------- Bibliography ----------
+% ----------------------------------
+\newpage
+\printbibliography[heading = bibintoc, title = References]
+% ------------------------------
+% ---------- Appendix ----------
+% ------------------------------
+%\begin{comment}
+\newpage
+\appendix
+\section*{Appendix}
+%\input{Appendices/App_Data}
+%\input{Appendices/kodetest.tex}
+
+%\end{comment}
+
+
+\end{document}

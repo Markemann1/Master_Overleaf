@@ -1,0 +1,158 @@
+
+
+% --------------- Page setup ---------------
+\usepackage[lmargin=25mm,rmargin=25mm,tmargin=27mm,bmargin=30mm]{geometry}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.8em}
+
+\usepackage[utf8]{inputenc} % Character encoding "æøå"
+\usepackage{csquotes}
+% ------------------------------------------------------
+% -------------------- Bibliography --------------------
+% ------------------------------------------------------
+% \usepackage[backend = biber, urldate = short, maxcitenames = 3]{biblatex}
+\usepackage{caption}
+% \usepackage[square,numbers]{natbib} % Refereransepakken  
+
+\usepackage[backend = biber,    % Recommended backend for sorting bibliography
+            style = numeric,    % Close to the 'Harvard' referencing style %% authoryear-comp %%
+            urldate = short,     % Long: 24th Mar. 1997 | Short: 24/03/1997
+            maxcitenames = 2   % Number of authors in cite before replaced with 'Author#1 et al.'
+            ]{biblatex}
+\usepackage[nottoc]{tocbibind} % Includes Bibliography, Index, list of Listing etc. to table of contents
+
+
+% --- Nyttig underveis kanskje ---
+
+
+% ---------------------------------------------------------------
+% -------------------- Header & Footer & TOC --------------------
+% ---------------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[RO]{}            % hva nå enn dette betyr
+\fancyhead[RE]{}            % hva nå enn dette betyr
+\cfoot{\thepage}            % hva nå enn dette betyr
+
+\usepackage{lipsum}
+\usepackage{subfigure}      % Plassere figurer ved siden av hverandre
+\usepackage{titlesec, blindtext}
+% --- Enable verbatim in footnotes ---
+\usepackage{fancyvrb}
+\VerbatimFootnotes
+
+% Edit title of lists and other stuff in TOC
+\setcounter{tocdepth}{3}
+\renewcommand{\contentsname}{Table of Contents}   % Rename table of contents
+\renewcommand{\listfigurename}{List of Figures}   % Rename list of figures
+\renewcommand{\listtablename}{List of Tables}  % Rename list of tables
+\setcounter{tocdepth}{3}        % Endrer nummereringen i doc
+\setcounter{secnumdepth}{4}     % Endrer nummereringsreglene for subsubseksjoner
+
+\usepackage[acronym]{glossaries}
+\input{acronymes.tex} % acronyms with shortcuts
+
+% ----------------------------------------------------
+% -------------------- Appendices --------------------
+% -----------------------------------------------------
+\usepackage[toc,page]{appendix}
+%\newcommand{\addappendix}{   % Self-created command to insert appendix with defined settings
+%    \newpage
+%    \appendix
+%    \section*{Appendix}   % Name of appendix
+%    \addcontentsline{toc}{section}{Appendix}  % Add appendix name to table of contents
+%    \renewcommand{\thesubsection}{\Alph{subsection}}    % Change numbering of section to upper-case letters inn appx
+%    \renewcommand{\thesection}{\Alph{section}}
+%    \renewcommand{\thesubsection}{\arabic{subsection}}
+%}
+% -------------------------------------------------------------
+% -------------------- References to stuff --------------------
+% -------------------------------------------------------------
+\newcommand{\source}[1]{\vspace{-4pt} \caption*{\hfill \footnotesize{Source: {#1}} } }   % insert sources in images
+% Edit format of /autoref
+\def\equationautorefname{Equation}  % Autoref-name for equations
+\def\figureautorefname{Figure}  % Autoref-name for figures
+\def\tableautorefname{Table}    % Autoref-name for tables
+\def\subsectionautorefname{\sectionautorefname} % Autoref-name for subsections
+\def\subsubsectionautorefname{\sectionautorefname} % Autoref-name for subsubsections
+
+% ------------------------------------
+% --------------- Code ---------------
+% ------------------------------------
+\usepackage{listings, 0-style/lstlisting}
+
+% ------------------------------------------------------
+% -------------------- Front matter --------------------
+% ------------------------------------------------------
+% Front matter is located before the table of contents, e.g. preface (Norsk: forord) and has separate settings
+\newcommand{\frontmatter}{
+    \pagenumbering{roman}}   % Setting page numbering to lower-case roman
+    
+% --- Main matter ---
+% This is the main part of the paper.
+\newcommand{\mainmatter}{
+    \newpage
+    \pagenumbering{arabic}}  % Setting page numbering to normal integers
+    
+% -------------------------------------------------------
+% -------------------- General stuff --------------------
+% -------------------------------------------------------
+
+% --- Todo notes ---
+\usepackage{xargs}
+\usepackage{xcolor}
+\usepackage[colorinlistoftodos,prependcaption]{todonotes}
+\setuptodonotes{inline}
+\newcommandx{\skriv}[2][1=]{\todo[linecolor=orange,backgroundcolor=orange!25,bordercolor=orange,#1]{#2}}
+\newcommandx{\nb}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\illu}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\research}[2][1=]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,#1]{#2}}
+%\newcommandx{\change}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+%\newcommandx{\utdyp}[2][1=]{\todo[linecolor=olive, backgroundcolor=olive!25, bordercolor=olive,#1]{#2}}
+
+\usepackage{hyperref}   % Hyper-references, possible to change color
+\hypersetup{    % Color of hyper-references
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black}
+\usepackage{comment}    % Comment blocks of text
+\usepackage{color}
+\usepackage{multicol}
+\usepackage{enumitem}   % Endrer enumerate, itemize og description
+% --- Image ---
+\usepackage{graphicx}   % Handle images
+\usepackage{wrapfig}    % Wrap text around images
+\usepackage{float}      % Force image location using "H"
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}   % Ruler
+% --- Table ---
+\usepackage{csvsimple}
+\usepackage{booktabs}
+\usepackage{multirow}
+% --- Language & units ---
+\usepackage[english]{babel}
+\usepackage{siunitx}    % Enable SI units
+% --- Mathematics ---
+\usepackage{bm}     % Bold text in math mode
+\usepackage{amsmath}    % Matrices
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{textgreek}
+
+
+% -----------------------------------------------------
+% -------------------- Flow Charts --------------------
+% -----------------------------------------------------
+% Customize these flow chart settings to fit your own preferences. Hva nå enn dette er 
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+    

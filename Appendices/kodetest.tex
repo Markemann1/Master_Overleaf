@@ -1,0 +1,37 @@
+\section{Code writing test}
+
+\begin{lstlisting}[language=python]
+model = pyo.ConcreteModel()
+
+# Declare sets
+model.G = pyo.Set(initialize=GENERATOR IDen)
+model.D = pyo.Set(initialize=DEMAND IDen)
+
+# Declare parameters
+model.P_g = pyo.Param(model.G, initialize=P_g)
+model.MC_g = pyo.Param(model.G, initialize=MC_g)
+model.P_d = pyo.Param(model.D, initialize=P_d)
+
+# Declare decision variables
+model.prod = pyo.Var(model.G, within=pyo.NonNegativeReals)
+model.dem = pyo.Var(model.D, within=pyo.NonNegativeReals)
+
+# Objective function
+def Objective(model):
+    return sum(model.prod[i] * model.MC_g[i] for i in model.G)
+
+model.OBJ = pyo.Objective(rule=Objective, sense=pyo.minimize)
+
+# Declare constraints
+def energyBalance(model):
+    return sum(model.prod[p] for p in model.G == model.dem[d] for d in model.D)
+
+model.energyBalance_constr = pyo.Constraint(rule=energyBalance(model))
+
+opt = SolverFactory("gurobi")
+opt.solve(model)
+\end{lstlisting}
+
+\subsection{Subsection input code test}
+
+\lstinputlisting[language=Python]{Appendices/main.py}
