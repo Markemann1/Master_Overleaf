@@ -9,7 +9,7 @@
 % ---------- Preamble, TOC, title ----------
 % ------------------------------------------
 
-%\begin{comment}
+\begin{comment}
 \pagenumbering{gobble}
 \input{0-style/title} 
 \frontmatter
@@ -20,31 +20,37 @@
 \newpage
 \input{0-Preamble+/preface}
 \newpage
-%\end{comment}
+\end{comment}
 
 \tableofcontents
 
+\begin{comment}
 \newpage
 \listoffigures
 \newpage
 \listoftables
 
-
 \addcontentsline{toc}{section}{Acronyms}
 \printglossary[type=\acronymtype]
 \printglossary
+\end{comment}
+
+
 
 
 \newpage
 \listoftodos 
-
-
 % ------------------------------
 % ---------- Sections ----------
 % ------------------------------
 \mainmatter
 
-\input{Disposisjon}
+\input{1. Introduction}
+\input{2. Theoretical framework}
+\input{3. Methodology}
+\input{4. Results}
+\input{5. Discussion}
+\input{6. Conclusion}
 
 \newpage
 Artikkel 1: \cite{} \\

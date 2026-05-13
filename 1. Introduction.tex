@@ -1,0 +1,81 @@
+\section{Introduction}
+
+\subsection{Background and Motivation}
+% GUIDE: ~3 avsnitt. 
+% NOTE: General framing, no operator details
+
+% 1. Energy transition + Norwegian grid constraints (4GW connection queue(?), 2.6GW from data centers(?). Variable renewable energy is growing - The syqstem needs more flexibility to maintain stability. 
+% 2. Hydropower legacy made thermal flexibilityh historically unnecessary - Norway had a natural balancer (compared to Sweden and specially Denmark) That structural advantage is eroding as demand grows faster than grid capacity
+% 3. District heating holds a large, underused flexibility resource [~1500 MW potential, ~350 MW deployed]. But that resource is structurally locked out of balancing markets and load shifting assistance by tariff design and market thresholds.
+% ------------------------------------------------------------------------------
+
+
+The Norwegian power system had historically relied on flexible hydropower to balance supply and demand, reducing the need for thermal flexibility \& cite{}. The current situation is materially different: rising electricity prices, an increasingly constrained transmission and distribution grid (Tripplecheck: approximately 4 GW in the connection queue, of which 2.6 GW comes from data center applications), and growing variable renewable generation \[VRE\], have raised the value of system flexibility. District heating [DH] operators in Norway control a substantial latent flexibility resource through electric boilers, heat pumps, and thermal storage, but the regulatory and market environment prevents operators from monetizing it. The grid tariff structure, more accurately - the capacity charge - and the regulatory structure of Statnett's balancing markets jointly disincentivise the load-shifting behaviour that would benefit the wider power system %\cite{}.
+
+
+\subsection{Problem statement}
+% GUIDE: ~2 avsnitt
+% NOTE: No specific monitary values or figures here. Those are for the Theory section and results. Establish structural logic, not magnitude
+
+% 1. Split-incentive structure; The district heating operator that could provide flexibility bears the full cost of that flexibility, while the benefits (avoided grid reinforcement, free'd capacity, lower system prices and more) accrue to the DSO and society at large. No transfer mechanism that bridges this divide exists on an economical feasibility level.
+% 2. The consequence; Rational DH operators underinvest in flexibility relative to what would be societally optimal. This thesis examines what commercial and socio-economic costs and benefits look like, and suggests how to bridge the gap towards economic feasibility.
+
+Current market and regulatory conditions create a structural split-incentive problem in the provision of thermal flexibility from Norwegian district heating. DH operators who invest in, and operate, flexible assets - electric boilers, heat pumps, and thermal storage - bear the full financial cost of that flexibility, like: Increased capital expenditure, grid capacity charge and operational complexity. While the potential benefits of activating that flexibility, however, largely accrue elsewhere: To distribution system operators through avoided grid reinforcement, to transmission system operators through freed balancing capacity, and to consumers through lower system prices during peak periods. No transfer mechanism currently exists to redirect a share of those societal gains back to the DH operators who carry the financial burden.
+
+The consequence is a structurally sub-optimal equilibrium. Operators face weak or negative incentives to offer the flexibility that the power system increasingly needs. Closing this divide requires understanding both sides of the ledger. The commercial costs and revenues that determine operator behavior, and the socio-economic value that justifies public interest in changing those conditions. This thesis examines both, and analyses what regulatory an market design changes would be required to align them.
+
+
+\subsection{Objectives and Research Questions}
+% GUIDE: one main research question, 2-3 sub-questions. 
+
+% On sub-question #2 (triangulation of socio-economic benefit): The analytical work is the triangulation itself, comparing the THEMA estimate against independent sources - stating an uncertainty range. Its not "Comparing my number to existing literature", as I have no number. Its consolidating existing literature into one central number with a stated degree of undertainty.
+
+\todo{Refine with Arild at next supervisor meeting, specially sub-question 2}
+
+\paragraph*{Main research question:}
+To what extent do current market and regulatory conditions produce a divergence between the commercial and socio-economic value of thermal flexibility in Norwegian district heating, and what mechanisms could reduce that divergence?
+
+\textbf{Sub-questions:}
+\begin{enumerate}
+    \item What are the commercial costs and revenues associated with operating thermal flexibility assets in the Oslo district heating system under current market and tariff conditions?
+    \item What is the socio-economic value of the same flexibility? Triangulated across multiple reports [Tentatively: THEMA \cite{Thema_fjernvarme_2024}, NVE \cite{NVE_langsiktig_2023}, Vista Analyse \cite{Vista-analyse_energifleksible_2023}, SINTEF \cite{SINTEF_energy_2023} - and how robust is the triangulated estimate?
+    \item Which specific regulatory, market design, and grid tariff features drive the divergence between the two perspectives? And which are most amenable to change? 
+\end{enumerate}
+
+
+\subsection{Scope and Limitations}
+% GUIDE: 1 avsnitt. 
+% in-scope: Oslo (Hafslung Celsio) as primary case; Trondheim/Bergen as comparative context; electric boilers, heat pumps, thermal storage. 
+% Out-of-scope: nærvarme, end-user flexibility/elastivity, detailed technical asset design, socio-economic CBA built from scatch (triangulated from litterature, not constructed in this thesis)
+
+The thesis takes Oslo's district heating system, operated by Hafslund Celsio, as the primary single case. Trondheim and Bergen are retained as comparative context. The flexibility assets in scope are electric boilers, heat pumps and thermal storage. Local heating systems, end-user price elasticity modeling and detailed technical asset design are out of scope for this thesis. The socio-economic valuation is drawn from existing literature - primarily \cite{} and triangulated against other sources rather than constructed from scratch.
+
+\subsection{Contribution}
+% GUIDE: 2-3 sentences. Leading with pairing socio-economic vs. commercial CBA as literature gap. Lack of level of detail is a weakness of the thesis, dont lean on it. The defensible claim is the paired valuation structure applied to a single Norwegian DH system, producing a quantified gap rather than two strong, independent parallel analyses
+
+% NOTE: Reproducability is only applicable if the commercial model in section 3.3 distinguished public data inputs (spot prices, tariff parameters etc) from restricted-access data inputs (Hafslund operational data. Might have to scrap the claim of transparent/reproducable. We'll see.
+
+The thesis offers a paired commercial and socio-economic valuation of thermal flexibility for a single Norwegian district heating system, quantifying the gap between the two perspectives rather than presenting them as parallel analyses. The DH operator-side estimate is generated % by a transparent, reproducable Python and PuLP/Gurobi optimisation model.
+The system-side estimate is built by triangulating published societal value figures across multiple sources. % To the author's knowledge, this paired structure has not previously been applied to a Norwegian DH system. 
+
+
+
+\subsection{Thesis Structure}
+% GUIDE: 1 (maybe 2) sentences max pr chapter. Update as thesis is finishing
+% NOTE: All sections discussed will be fittet with \autoref{} to make links to the different sections [\autoref{sec:2-Theory} establishes ...]
+
+Section 2 establishes the theoretical framework: Energy system flexibility concepts, district heating as a flexibility resource, barriers to flexibility utilization, the Norwegian context, the conseptual definitions of commercial and socio-economic value, and a literature review that maps the field of research and locates this thesis within it. 
+
+Section 3 describes the methology, including the case study design, the optimisation model, the societal valuation triangulation, the gap-analysis framework and the interview protocol. 
+
+Section 4 presents the results from the model, the societal valuation, the gap and the qualitative interviews. 
+
+Section 5 discusses interpretation of the results, barriers, policy and market design implications, and conditional transferability.
+
+Section 6 concludes the thesis.
+
+
+
+
+
+\newpage

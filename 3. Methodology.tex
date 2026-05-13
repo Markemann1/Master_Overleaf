@@ -1,0 +1,122 @@
+\section{Methodology}
+\subsection{Research Design}
+% GUIDE: Single-case study with embedded sub-units (Yin, 2018),
+% justified. Sub-units: heat production sources, distribution
+% infrastructure, demand-side relationships, governance
+% arrangements. Multi-city design considered and reduced to Oslo
+% primary + Trondheim/Bergen comparators — explain the tradeoff
+% (depth vs breadth; data availability).
+
+\subsection{Three-Step Analytical Approach}
+% GUIDE: One paragraph per step, in order:
+%   (1) Bedriftsøkonomisk — own Python + PuLP optimisation model
+%   (2) Samfunnsøkonomisk — drawn from THEMA (2024) and triangulated
+%       across NVE, Vista Analyse, SINTEF
+%   (3) Gap analysis + policy discussion — comparison + transferability
+
+\subsection{Commercial/(DH Operator Business) Model}
+% GUIDE: Objective function → decision variables → constraints →
+% input data → assumptions. Summarise here; refer reader to
+% Appendix for full formulation.
+
+\subsubsection{Model Formulation}
+% GUIDE: LP/MILP optimisation. Objective: minimise net electricity
+% cost (= purchase cost + grid tariff + electricity tax − spot
+% arbitrage revenue − reserve market revenue). Decision variables:
+% hourly dispatch of electric boilers, heat pumps, accumulator
+% charge/discharge. Constraints: heat demand balance, storage
+% state-of-charge, ramp rates, market eligibility (minimum bid
+% size).
+
+\subsubsection{Input Data and Sources}
+% GUIDE: Nord Pool spot prices (NO1, 2021–2024 or equivalent
+% period); Statnett mFRR/aFRR clearing prices; Hafslund Celsio
+% operational data (where available under NDA); grid tariff
+% parameters (Elvia effektledd current structure); electricity tax
+% (0.60 øre/kWh industrial rate).
+
+\subsubsection{Data Availability and Reproducibility}
+% GUIDE: New subsection — split inputs into public vs.
+% NDA-restricted. Public: spot prices, balancing market clearing
+% prices, tariff schedules, electricity tax. NDA-restricted:
+% Hafslund Celsio plant-level operational data. State explicitly
+% what an external reader could reproduce from public data alone
+% and where the model relies on protected inputs. This is the
+% honest version of the "transparent, reproducible" claim in §1.5.
+
+\subsubsection{Assumptions and Simplifications}
+% GUIDE: State the most consequential assumptions:
+%   - Perfect foresight in the optimisation (vs. forecast
+%     uncertainty)
+%   - Fixed heat demand profile (no demand-side elasticity)
+%   - Hafslund Celsio capacity figures used as-is (unverified
+%     283 MW vs per-site sum ≈ 131–137 MW — flag and use
+%     conservative figure)
+%   - No capital cost amortisation in the operational model
+
+
+
+\subsection{Socio-Economic Valuation}
+% GUIDE: How the THEMA (2024) figures are used, which independent
+% sources triangulate the NOK 1–1.6 bn estimate, and how "society"
+% is scoped. Acknowledge sponsor bias (THEMA was commissioned by
+% Hafslund Celsio) and explain the mitigation (triangulation
+% against NVE, Vista Analyse, SINTEF). Output: a central estimate
+% with an explicit uncertainty range — this is what SQ2 is asking
+% for and what feeds the gap analysis in §4.3.
+
+\subsection{Qualitative Interviews}
+% GUIDE: Triangulation across the four actors in the value gap:
+%   - Operator: Hafslund Celsio
+%   - DSO: Elvia
+%   - Regulator: Energidepartementet / NVE
+%   - Demand side: OBOS (lower priority)
+% Mention SIKT compliance briefly. Reference interview guide in
+% Appendix.
+
+\subsubsection{Sampling and Recruitment}
+
+\subsubsection{Interview Protocol}
+
+\subsubsection{Analysis Approach}
+% GUIDE: Reflexive thematic analysis (Braun \& Clarke, 2019).
+% State this in one line so §4.4 has a defined epistemic basis
+% rather than reading as free narration. Interviews are Level 2
+% reinforcement (not load-bearing): the model and valuation
+% triangulation carry the argument; interviews contextualise and
+% stress-test, they do not prove. Keep that framing explicit.
+
+
+
+\subsection{Validity}
+% GUIDE: Yin's four tests — construct, internal, external,
+% reliability. One short paragraph per test.
+
+\subsection{Methodological Limitations}
+% GUIDE: 200–500 words. Scope of this section: design constraints
+% baked into the methodology — what the chosen architecture can
+% and cannot say. Broader study-level unknowns and future work
+% live in §5.5, not here.
+% Each candidate: (1) state the limitation, (2) justify proceeding
+% (60–70\% of the paragraph), (3) point forward to §5.5.
+% Candidates:
+%   - Single-case design (external validity)
+%   - Perfect-foresight optimisation (vs forecast uncertainty)
+%   - Modelled-rather-than-metered dispatch
+%   - Operational data restricted under NDA
+% Sponsor-bias on THEMA is acknowledged in §3.4 (the valuation
+% section), not duplicated here.
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
