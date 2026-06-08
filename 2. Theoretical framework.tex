@@ -1,332 +1,298 @@
 \section{Theoretical Framework}
 
-% GUIDE: This chapter has one job — equip the reader with the
-% conceptual toolkit needed to follow the methodology and results.
-% Structure carries the reader from the abstract (flexibility as a
-% system concept) to the concrete (the bedrifts/samfunns split that
-% the rest of the thesis operationalises), and closes with a
-% literature-review sub-section that maps the field via a research-gap
-% matrix.
-%
-% Logic of the ordering:
-%   §2.1  — what flexibility is (vocabulary)
-%   §2.2  — how DH provides it (technology)
-%   §2.3  — what blocks it (barriers, with Nordic comparison)
-%   §2.4  — why Norway is its own case (system characteristics)
-%   §2.5  — the two valuation perimeters (conceptual hinge)
-%   §2.6  — what the literature has and hasn't done (gap matrix)
-%
-% Tone: synthesise, don't catalogue. Reader should finish knowing
-% (a) the key concepts, (b) the state of the art, and (c) where the
-% thesis sits.
-
-% --- Chapter opening paragraph -------------------------------
-% GUIDE: One short paragraph (~6–8 lines) that previews the chapter
-% logic above. State explicitly that the chapter does double duty —
-% theoretical framework + a short literature review at the end —
-% and that the chapter is organised so the conceptual hinge (§2.5)
-% sits between the empirical body and the gap analysis. Prevents
-% the reader from reading the chapter as a content dump.
+\utsett{chapter opening paragraph 2}
 
 
+%-----------------------------------------------------------------------
 \subsection{Energy system Flexibility: Concepts and Frameworks}
-
-% GUIDE: Establish the vocabulary the rest of the thesis uses.
-%   - Definitions: temporal, spatial, directional flexibility
-%   - Typology: FCR / aFRR / mFRR / long-duration storage / DR
-%   - Seminal frameworks: Lund et al. (2017), Flex4RES (2019),
-%     Sneum (2021) barrier taxonomy
-%   - Define "flexibility value" in terms that survive the
-%     bedrifts/samfunns split introduced in §2.5
-%   - ~2 pages. Do not drift into DH specifics here.
-
+\utsett{sub-section opening paragraph 2.1}
 
 \subsubsection{Definitions and Frameworks}
-% GUIDE: Lund et al. smart energy systems (2017), Flex4RES summary
-% (2019), Sneum's barrier taxonomy (2021). Define "flexibility value"
-% in a way that survives the bedrifts/samfunns split in §2.5 — i.e.,
-% framed as "value to whom, measured how", not as a single number.
 
+No single definition of energy flexibility commands agreement across the heating and power-system literature, and the variation is consequential because each definition draws a different boundary around what counts as flexibility. Two recent reviews document the fragmentation directly: A SINTEF synthesis grades $14$ prior definitions against three criteria, find none that satisfies all, and proposes a unifying definition to close the gap \cite{degefa_comprehensive_2021}. 
+\utfyll{Write in what that proposition is depending on how it relates to DH}
+A Systematic review of $85$ building-flexibility studies finds that roughly $42\%$ of them give no formal definition of flexibility, and that the rest rely on $61$ distinct quantification metrics \cite{li_energy_2021}. Three broad traditions recur. The first treats flexibility as a physical property of the system, grounded in inertia and in the coordinated operation of coupled electricity, heat and gas grids: That flexibility is simply the ability to speed up, delay or reduce the injection or extraction of energy relative to the reference profile, requiring only that the system possess inertia \cite{vandermeulen_controlling_2018}, \cite{lund_smart_2017}, \cite{mathiesen_smart_2015}.
+The second defines flexibility operationally, as a response to an external signal: The managed shifting of demand and generation to meet grid and local objectives, quantified through market-tier participation or performance indicators such as the "Flexibility Function" rather than in absolute energy terms \cite{li_ten_2022}, \cite{golmohamadi_integration_2022}. 
+The third, sociological, tradition argues that both framings take the timing of demand as given, and so risk stabilizing rather than providing a genuine flexible system \cite{blue_conceptualising_2020}, a caveat this thesis acknowledges while remaining within the engineering and economic frameworks. The traditions converge on flexibility as the temporal shifting of energy injection or extraction enabled by inertia, and diverge mainly on whether it is treated as a system property, a market tradable response, or a control problem. This thesis adopts a definition that sits in the first two traditions, and suits a district heating operator facing the power market. The thesis will operate under the following definition: Energy flexibility is the capacity of an asset or system to modify its rate of production or consumption relative to a reference profile in response to a price- or system signal, within technical and commercial constraints \cite{sneum_barriers_2021}, \cite{degefa_comprehensive_2021}. 
+\utfyll{Something along the lines of: If a flexible asset is never activated, due to either non-existent pricing signals, or if market/tariff structures are set up in such a way as to cost more for the asset owner than it earns in providing the flexibility - then the flexibility asset only holds theoretical societal value, which cannot be utilized until regulatory changes are made.}
 
+A second distinction of flexibility assets separates between the physical capacity for flexibility, and its operation organizes how that capacity is described throughout this thesis. Following Vandermeulen in \cite{vandermeulen_controlling_2018}, the \textit{structural} layer is the embedded physical capability that makes deviation from the reference profile possible. In this context, it is the of thermal inertia in a district heating system through the heat carrier in the network pipes, dedicated thermal energy storage such as an accumulator tank, the thermal mass of connected buildings and electric boilers. The \textit{operational} layer is the dispatch decision that activates the physical capacity in response to a signal. These two are utilization layers of the same technology; an electric boiler is structural in its installed capacity, but the choice to up- or down-regulate its usage is operational. Following this, we can state that structural capacity without a operational dispatch signal or utilization yields no flexibility. 
 
+Structural capacity and operational dispatch together constitute a \textit{flexibility resource}, and whether that resource provides any value to the operator depends on the third layer, \textit{enablers}. Degefa \cite{degefa_comprehensive_2021} and Sæle \cite{saele_understanding_2023} classify markets, reserve products and network tariffs as flexibility enablers - the external preconditions required to activate the value of flexibility resources. A district heating operator can hold ample structural flexibility capacity and even dispatch it correctly, yet capture no value if no reserve product, bilateral contract or proper market conditions exists. 
+\utsett{AUTOREF: Section 2.3 catalogues the enablers that are missing or adverse in Norway, and AUTOREF section 2.5 formalizes how their absence creates a value gap between the socio-economic benefits and the commercial value of the same physical flexibility}
+
+Operational flexibility is exercised in two modes. The first is load-shifting; advancing or deferring consumption relative to the reference profile without altering the total energy delivered - it repositions the time at which the same amount of consumption occurs. The second, and the principal operational lever in district heating with electrical boilers installed, is directional regulation - the increase or decrease of electrical consumption in response to system conditions. The Nordic flexibility framing of the Flex4RES program defines flexibility in these directional terms; As the ability to regulate the increase or decrease of generation or consumption in response to market signals \cite{skytte_flexible_2019}. 
+The two directions map onto opposite system needs. When electricity is in surplus and prices are low, a power-to-heat (P2H) asset up-regulates - increasing electrical consumption to convert surplus power into heat and charging the accumulator tank for later use. When the grid is stressed and prices are high, the same system down-regulates - reducing electric boiler draw and instead discharging stored heat from the tank, which relieves the peak load on the grid while still serving demand.
+
+The power flexibility of a district heating system with a controllable electrical boiler is sentral to this thesis. Golmohamadi distinguishes power flexibility, a response in the system's electricity demand, from heat-side flexibility, and names the electrically operated assets as the source of the greatest direct power-flexibility potential in district heating systems \cite{golmohamadi_integration_2022}. Bloeß and Schill frame the same flexibility as the \textit{flexible} use of electricity for heating, the timing of the conversion adjusted to system conditions rather than electricity simply substituting for fuel \cite{bloes_power--heat_2018}. 
+
+How far that power flexibility can be shifted in time depends on the thermal buffer into which the converted heat can be stored, and later drawn from. Golmohamadi groups three such buffers into two kinds \cite{golmohamadi_integration_2022}:
+\begin{itemize}
+  \item Passive thermal inertia:
+  \begin{enumerate}
+    \item The heat carrier in the network pipes (FHC, real-time flexibility/intraday)
+    \item The thermal mass of connected buildings (FTI, real-time flexibility/intraday)
+  \end{enumerate}
+  \item Active thermal inertia:
+  \begin{enumerate}
+    \item Dedicated thermal storage (FTS): An accumulator tank that scales from day-ahead arbitrage to seasonal shifting depending on its size.
+  \end{enumerate}
+\end{itemize}
+For a district heating operator working from th supply side, the relevant buffers are the network heat carrier (FHC) and the accumulator (FTS). Building thermal inertia (FTI) is a demand-side source outside the scope of this thesis. The buffer's parameter; heating storage capacity, sustainable deviation duration, and the ramp rate at which changes can be applied, determine which products the power-flexibility action can bid into. Two revenue pathways appear: The first pathway is reserve products, procured by the transmission system operator and graded by its activation speed, pay for capacity held ready and energy activated on a system signal. The second being spot-market arbitrage which rewards shifting consumption across the day-ahead price profile, and requires a price spread between charging and discharging windows wide enough to cover the cost of flexible operation. Each pathway faces different eligibility barriers, activates on a different signal and forms a separate component of the commercial value of thermal flexibility.
+
+Just as the definition of flexibility differs, so does the estimation of its value. The term is applied to everything from reduced system operating cost or welfare gain in \cite{mitridati_heat_2020}, to plant-level arbitrage revenue in \cite{javanshir_operation_2022}, to avoided variable renewable energy curtailment and the corresponding uplift in its generation value \cite{kirkerud_power--heat_2017}, as well as building or network performance indicators such as peak-to-average load ratio \cite{li_ten_2022}. These framings apply different system boundaries, count different actors as beneficiaries, and produce results in incomparable units. This thesis adopts a perspective-explicit working definition: Flexibility value is the monetary or welfare benefit attributed to a flexibility action, conditional on the system boundary and the actor whose ledger is being measured. \utsett{AUTOREF: Section 2.5} formalizes this as the commercial interest and socio-economic value perimeters. The following two subsections establish the Norwegian power system and the sector-coupling context within which both perimeters operate.
+
+%-----------------------------------------------------------------------
 \subsubsection{Flexibility in Power Systems}
-% GUIDE: Norwegian context. Bidding zones NO1–NO5, merit-order
-% dispatch, hydropower dominance and what that means for marginal
-% pricing. Introduce the balancing hierarchy (FCR → aFRR → mFRR)
-% and minimum bid sizes (10 MW nationally; 5 MW in NO1/NO3 for mFRR).
-% Cite: Kirkerud (2016, 2017), NVE LA23.
+
+The Norwegian power system is organized into five bidding zones, NO1 through NO5, which clears with their own separate spot prices through NordPool. The zones reflect physical transmission constraints between regions, and is a regulatory instrument for managing congestion - when transfer limits are met, each zone clears its own price, which signals local scarcity or surplus \cite{iea_-_international_energy_agency_norway_2022}. Hydropower supplies close to $90\%$ of the national generation, making it the dominant source in every pricing zone. NO2, the southwest, is the largest producer and runs a substantial surplus, together with the western (NO5) and northern (NO4) who also generates above their local demand. NO1, the southeastern grid including Oslo, is the demand center of the country, and is generally a net importer of power. 
+\utsett{concrete figures around import vs export vs production type in the different regions - Electricity consumption and generation by price area (StatBank table 14092 \& 14093 SSB: September 2025, for instance, it generated about 1.6~TWh against 2.1~TWh of consumption, with roughly 94\% of its own output was hydropower, whereas NO2 produced about 3.8~TWh against 2.5~TWh of demand}.
+
+Southern Norway (NO1, NO2, and NO5) are strongly coupled and frequently clears at a single price. The sharper divide runs between the south and the wind-heavy north (NO3 and NO4), not the southern neighbor-zones \cite{iea_-_international_energy_agency_norway_2022}. Because NO1 is closely coupled to NO2, a wind-driven low price surplus in the south propagates much of its market signal to the Oslo zone. The arbitrage value available to a power-to-heat operator in NO1 is therefore governed less by local conditions and more by the southern wind and system coupling to continental Europe, and by congestion in the connector to the northern zones. 
+\utsett{Analyze NO1 spot-price and day-ahead price variance and quantify NO1's coupling to NO2+NO5 zones, and the NO3+NO4 zones. Adjust the paragraph acordingly with the nordpool and ssb datasets}
+The resulting price-spead distribution sets the ceiling of the commercial arbitrage value available to Oslo-based DH operators before any market-access barriers are taken into account.
+
+Norway's hydropower dominance reshapes the value logic of thermal flexibility relative to fossil-heavy or wind-heavy power systems \cite{NVE_langsiktig_2023}. The combination of dispatchable hydropower and price-responsive industrial demand makes Norway the Nordic region's primary provider of system flexibility \cite{skytte_flexible_2019}. In the terms of \utsett{AUTOREF Section 2.1.1}, a hydropower reservoir is itself a structural flexibility asset at system scale. In a fossil-dominated system, a load that absorbs off-peak electricity displaces marginal thermal generation, reducing fuel combustion and the associated emissions. In Norway, where the marginal unit originates from hydropower, drawing power off-peak rather than at the demand peak conserves the reservoir water for higher-value uses, namely peak-load dispatch, cross border export to higher priced markets, and reserve provision to Statnett \cite{askeland_balancing_2019}, making the primary system-level benefit of sector coupling in Norway freed reservoir capacity rather than saved fossil fuel cost and consumption. Empirically, power-to-heat in the Nordic district heating mix concentrates in the spring, summer and autumn rather than during peak winter demand because the high electricity price during winter hours cause other heating fuels to become cheaper than electric conversion \cite{kirkerud_power--heat_2017}. 
+
+Statnett procures balancing services through a three-tier product hierarchy that cascades through increased time-frames, from automated to manual activation. Frequency Containment Reserves (FCR) are activated continuously and symmetrically in response to real-time frequency deviations. Automatic Frequency Restoration Reserves (aFRR) restore nominal frequency automatically within seconds to minutes following a disturbance. Manual Frequency Restoration Reserves (mFRR) are dispatched manually on a 15-minute window and constitute the product tier most accessible to large thermal demand-side assets such as district heating electric boilers. Until early 2025 the minimum bid size for mFRR participation was $10 MW$ nationally and $5 MW$ in the NO1 and NO3 bidding zones \cite{monie_power--heat_2022}, a threshold that excluded all but the largest aggregated demand-side assets. With the implementation of the Nordic mFRR Energy Activation Market on the 4th of march 2025, the minimum bid was harmonized to $1 MW$ across all Nordic bidding zones \cite{solberg_manedsrapport_nodate} - a change Statnett had signaled in advance as part of its transition to automated balancing \cite{dalen_fleksibilitet_nodate}. The bid-size floor therefore no longer functions as a structural exclusion mechanism for district heating, where a single electric boiler site now clears this threshold. The binding barriers to district heating participation shift accordingly to qualification cost, and operational and metering complexity. The absence of a market framework along with the consumption capacity charge remain the largest barriers to DH flexibility utilization. The remaining barriers are further examined in \utsett{AUTOREF section 2.3.2}, and quantified in \utsett{AUTOREF section 4.3}.
 
 
-
+%-----------------------------------------------------------------------
 \subsubsection{Sector Coupling and Thermal Systems}
-% GUIDE: Define sector coupling. P2H as the link between electricity
-% and heat. Why coupling is valuable: synchronised dispatch reduces
-% curtailment and peak grid load.
-% Cite: Vanhanen (2024), Gea-Bermúdez et al. (2021),
-% Yamujala et al. (2025), Atabaki et al. (2026).
-% Note: keep Lund/Mathiesen/Østergaard SES cluster to 1–2 anchor
-% citations max; do not overload this section with foundational
-% papers that aren't load-bearing for the thesis argument.
+
+Sector coupling denotes the intentional integration of distinct energy-carrier systems through conversion technologies that let energy flow in parallel across historically separate supply chains \cite{lund_smart_2017}. The operative coupling in this thesis is power-to-heat: the conversion of electrical energy to thermal energy through electric boilers and heat pumps, or substitution of building heating with power from the grid through substituting it with district heating. The electrical. Boilers and heat pumps creates a controllable load on the power system and a corresponding heat source within the district heating network, making the network an active interface between the two carriers rather than a passive heat consumer. For both technologies, the coupling is unidirectional, in that the electricity is consumed to produce heat with no reverse conversion within the asset. Combined heat and power (CHP), including waste incineration plants couples the same two energy carriers, but in the opposite direction - generating electricity alongside heat from fuel. Its flexibility comes from adjusting the fuel consumption or the heat-to-power ratio. In the Oslo system, it serves as a baseload rather than as a P2H flexibility asset. Realizing the value of the P2H coupling depends on policy and market design as much as on the conversion technology. A scoping review of sector-coupling research by Vanhanen and Hanhijärvi \cite{vanhanen_energy_2024} found that policy integration and sector coupling are studied largely in parallel, with district heating being the explicit focus of only one of the $25$ reviewed studies, leaving the coordinated policy conditions for P2H flexibility under-examined.
+
+The structural flexibility of a district heating system, its thermal inertia is what makes this interface relevant at meaningful scale. Network piping volume and dedicated accumulator tanks can absorb or release heat independently of instantaneous consumer demand, giving the operator a thermal buffer across which electrical load can be advanced or deferred. The structural capacity of that buffer, with its volume,temperature range, and charge and discharge rate sets the envelope within which operational load-shifting if feasible. When electricity prices are low, a P2H asset converts surplus power to heat and stores it in that buffer, to be released during high-price or high-demand periods, which can help free up grid capacity and attenuate price spikes and congestion. The paper \cite{mitridati_heat_2020} name this a virtual electricity storage function, in which the district heating system provides energy storage-equivalent services to the power system, by synchronizing its electrical load with system conditions, without a dedicated power-storage asset. They show that sequential heat-then-electricity market clearing is shortsighted, so an operator optimizing within its own heat-market perimeter forgoes the system value that coordinated clearing would realize. The storage-equivalence itself is quantified in \cite{mitridati_power_2018}, which models the district heating pipeline storage as a power-system resource on a six-bus, three node case. The paper reports a $3.51\%$ reduction in total cost and a $1.65\%$ uplift in wind utilization when the virtual storage capability is unlocked. These magnitudes are case-specific, but the results indicate that heat storage-equivalency has merit, and that district heating thermal inertia carries quantifiable system benefit when the market design permits coordinated clearing. The critical qualification is that this value must be accessible to the operator who provides it. This accessibility hinges on an enabler; a reserve market product, flexibility contracts, or market and fee structures which rewards coordinated dispatch. Without an enabling function like that, the value accrues only to the grid operators and consumers, while the operator bears the full cost of flexible operation. This asymmetry between the location of value-creation and the location of cost incidence is the central theoretical mechanism this thesis seeks to quantify and reduce. 
+
+The Norwegian consequence of this coupling value differs from other European nations in one important aspect. In systems with high shares of variable renewable generation (VRE), the primary system-level benefit of P2H is the absorption of surplus wind and solar energy which would otherwise be curtailed, thus raising the achievable penetration of renewable generation \cite{geabermudez_role_2021}. In Norway, where current curtailment is structurally low and the dominating marginal power unit is hydropower reservoirs, the main benefit is instead reservoir-conservation. Surpluss absorption frees water for peak dispatch, export or reserve provision rather than averting VRE curtailment \cite{askeland_balancing_2019}. The coupling mechanism is identical across both contexts, but the value pathway differs. \utsett{AUTOREF: Section 2.4} develops the Norwegian system characteristics that produce these dynamics, and \utsett{AUTOREF: section 2.5} places it within the commercial DH and socio-economic valuation perimeters.
 
 
-
-
-
-
+%-----------------------------------------------------------------------
+%-----------------------------------------------------------------------
 \subsection{District Heating as a Flexibility Resource}
-% GUIDE: Move from abstract flexibility concepts to the DH system.
-% Technology stack first, then the European/Nordic evidence base.
 
+\utsett{Subchapter introduction 2.2}
+
+%-----------------------------------------------------------------------
 \subsubsection{European and Nordic Overview}
-% GUIDE: Scale and penetration of DH in Europe, emphasis on
-% Scandinavia. Denmark and Sweden as comparators — what they have
-% done, why Norwegian conditions differ. Keep 4GDH / 5GDH papers
-% to a single background sentence — this thesis is about large-scale
-% existing infrastructure, not low-temperature prosumer networks.
-% Cite: Werner (2017), Johansen \& Werner (2022), Mazhar et al.
-% (2018), Fernqvist et al. (2023), Sandberg, Sneum \& Trømborg
-% (2018). Background-only: Lund et al. 4GDH (2014, 2018), Buffa et
-% al. (2019), Dang et al. (2024).
 
+District heating covers a significant, but unevenly distributed share of building heat demand across Europe. Throughout this thesis, the penetration metric is the share of national buildings heat demand meet by district heating. The most comprehensive cross-country baseline on this metric is close to a decade old, but because district heating penetration is is governed by long-lived network infrastructure, it shifts slowly. According to that study, Denmark leads at roughly $50-65 \%$, with Sweden and Finland following at comparable levels. Germany, the UK and most of southern Europe remain below $15\%$ \cite{werner_international_2017}. A more recent study corroborates the cross-country ranking, while observing that the Danish DH meets roughly two-thirds of residential heating demand by the end of the 2010's \cite{johansen_something_2022}. The sector is undergoing a generational transition towards lower supply temperatures and greater integration of renewable and waste incineration sources. The fourth-generation (4GDH) concept that frames this shift was defined over a decade ago \cite{lund_4th_2014}. A 2024 comprehensive survey extends the trajectory to a fifth generation (5GDH) of near-ambient temperature networks, which is still evolving alongside 4GDH, rather than replacing it, and remains confined to early pilot projects \cite{dang_fifth_2024}. This thesis concerns existing large-scale DH infrastructure, operating at conventional supply temperatures. 4GDH and 5GDH developments are noted as background context, but do not form a part of the analysis. 
+
+Denmark occupies a disproportionately large share of the DH flexibility literature relative to its system scale, reflecting its early large-scale P2H deployment and a long tradition of integrating district heating with wind power. The Danish sector rests on statutory advantages that Norway does not share: Mandatory connection for new development, a non-profit pricing principle, and long-term municipal financing and ownership that aligns operator incentives with broader energy-system objectives \cite{johansen_something_2022}. Greater Copenhagen, where large-scale heat pumps have been integrated into the district heating network, has become a recurring technical benchmark for DH-integrated P2H flexibility \cite{bach_integration_2016}. Many of the barrier typologies and analytical frameworks applied in this chapter were developed in the Danish context, and are transferred here with adjustment for Norwegian structural conditions.
+
+Sweden represents a comparatively under-examined Nordic case. Swedish district heating covered approximately $50\%$ of national building heat demand in 2017, with Stockholm, Gothenburg and Malmö operating large network-integrated systems \cite{werner_international_2017}. The SthlmFlex project demonstrated a local flexibility market architecture within the Stockholm system, initiated jointly by Svenska kraftnät and the regional DSOs Vattenfall Eldistribution and Ellevio to address congestion that occurs during the winter-season \cite{nyman_how_2026}. The pilot operated from winter 2020/2021 onward and has since concluded with a very low market liquidity, with Ellevio stating that short-term local flexibility markets are not a suitable congestion-management tool for Stockholm in the near term future \cite{scrocca_local_2026}. The pilot nevertheless remains the closest Nordic institutional reference pilot for multi-DRO/TSO flexibility coordination. \cite{atabaki_optimising_2026} offer a recent sector-coupling optimization for the Swedish DH sector that is structurally analogous to this thesis's Norwegian question, and \cite{fernqvist_district_2023} provide the only available qualitative study of Swedish DH-flexibility actors - finding that weak institutional incentives and profit-oriented ownership structures limit flexibility provision, despite adequate technical capacity. Sweden's combination of large urban DH systems, growing wind integration and emerging local flexibility market structures makes it the more instructive Nordic comparator for analysis in \utsett{AUTOREF: Section 2.3.5}, wheras Denmark provides the primary technical benchmark throughout \utsett{AUTOREF: Sections 2.2 and 2.3}.
+
+Norway presents a structurally distinct profile within the Nordic group. National district heating penetration is approximately 10 to 12 percent of national building heat demand, significantly lower than Danish or Swedish levels, with the sector concentrated in three cities with three separate operators: Oslo (Hafslund Celsio), Trondheim (Statkraft Varme), and Bergen (BKK Varme) \cite{sandberg_framework_2018}. The paper attributes this gap to historical lock-in rather than to differences in operator profitability: Norway's legacy of abundant, historically cheap electricity and a direct-electric heating culture left it with few water-borne distribution systems, so the country now combines the lowest overall DH penetration in the Nordic region with the highest power-to-heat share of district heating generation \cite{sandberg_framework_2018}. Norwegian DH operators must consequently compete against a low-cost electricity baseline and lack the scale, cooperative ownership structures, and policy support that sustain Danish and Swedish operators. This structural position shapes both the barrier analysis in \utsett{AUTOREF: Section 2.3} and the case-selection rationale in \utsett{AUTOREF: Section 3.1}
+
+
+%-----------------------------------------------------------------
 \subsubsection{Power-to-Heat Technologies}
-% GUIDE: Technology review — electrode boilers, heat pumps
-% (compression), CHP. For each: operating principle, ramp rate,
-% minimum load, cost structure, interaction with electricity price
-% signal. Key for the model: electrode boilers ramp
-% near-instantaneously; heat pumps are constrained by COP and
-% temperature lift.
-% Cite: Kirkerud (2017), Bloeß \& Schill (2018), David (2017),
-% Böttger et al. (2014), Sipos et al. (2025), AFRY/Grønli (2025),
-% Monie (2022) for P2H in reserve capacity context.
+
+Power-to-heat (P2H) technologies are the controllable electrical loads that couple the electricity system to the district heating network: electric boilers and large-scale compression heat pumps convert purchased electricity into heat and can therefore be dispatched against electricity price signals and reserve-market activation windows \cite{bloes_power--heat_2018}, \cite{golmohamadi_integration_2022}. A third heat source, combined heat and power (CHP) plants including waste-to-energy (WtE) incineration facilities, couples the two carriers in reverse, generating electricity as a byproduct of heat production rather than consuming electricity \cite{beiron_combined_2020} and is the baseload technology for Oslo's district heating \cite{sandberg_framework_2018}. It is treated here because it sets the merit-order floor around which the P2H assets dispatch, not because it is itself a P2H flexibility asset. The three sources differ in capital intensity, operating cost structure, ramp rate, and the mechanism through which they bear on flexibility provision, distinctions that are load-bearing for the commercial model in \utsett{AUTOREF section 3.3}.
+
+Electrode boilers convert electrical current directly to heat by passing it through a water or steam medium, a process whose ramp rate is limited in practice only by switchgear response times rather than by thermal inertia, which makes the electrode boiler the fastest-responding P2H asset. Capital cost is low among P2H technologies, but operating cost is dominated by the electricity purchase price, making the asset economically attractive only when spot prices are sufficiently low or when reserve capacity payments compensate for standby commitments \cite{bloes_power--heat_2018}.
+
+Large-scale district heating installations are predominantly medium-voltage electrode units in the $3-70 MW$ range that modulate output continuously, in contrast to the lower-voltage resistance boilers and older stepped designs that operate across discrete load steps; both types reach conversion efficiencies of $95-99\%$ \cite{maruf_classification_2022}. In a statement to the online magazine Energiteknikk, Helle Grønli from AFRY points to a value-add on two fronts: Electrode boilers could earn meaningful annual revenue from mFRR capacity payments, while optimizing dispatch against the spot price could deliver sizable operational cost savings, mostly from heat-pump operation \cite{gronli_hvor_2025}. 
+
+Large-scale compression heat pumps extract thermal energy from a low-grade source, such as seawater, groundwater, or wastewater, and upgrade it to district heating supply temperature. Coefficients of performance (COP) under typical operating conditions range from 2 to 4, depending on the temperature lift between source and supply \cite{david_heat_2017}, \cite{bach_integration_2016}. Capital costs of heat pumps are substantially higher than electrode boilers. The Heat Roadmap Europe \cite{david_heat_2017} survey large-scale installations across European DH systems and document capital expenditure in the range of $300-600 \frac{\euro}{kW_{thermal}}$. The paper by Bach \cite{bach_integration_2016} corroborate the technical performance characteristics for the Greater Copenhagen installations, reporting demand-weighted COP averages of $2.9-3.2$ at distribution level and $2.5-2.6$ at transmission level, alongside full-load-hour profiles of between $3500-4000$ hours per year on the distribution network.
+
+The lower electrical input per unit of thermal output relating to electrode boilers, reduces price exposure. The heat pump's contribution to flexibility is constrained more by the economics and mechanical limits of cycling than by ramp rate; As the temperature lift between source and supply widens, COP deteriorates, and frequent start-stop operations accelerates compressor wear. So while electrode boilers can provide instantaneous up- and down-regulation, large-scale heat pumps have generally not been designed for frequent flexible regulation. \cite{david_heat_2017}. In practice, large-scale heat pumps function as base-load or mid-merit heat sources in the DH merit order, contributing to cost optimization over longer dispatch horizons rather than providing fast-response capacity for services like mFRR activation.\cite{kirkerud_power--heat_2017}, \cite{monie_power--heat_2022}. 
+
+The IEA HPT Annex 57 final report quantifies this tiering through the Sdr. Felding pilot in Denmark, in which a $1.3 MW$ heat pump records a start-up time of approximately seven minutes, and a turn-down time of around four minutes - placing heat-pump participation in the aFRR window rather than the faster, seconds-scale windows accessible to electrode boilers, the Frequency Containment Reserve (FCR) and Fast frequency Reserve (FFR). \cite{v_pedersen_annex_2024}.
+
+Combined heat and power plants (CHP), including waste-to-energy (WtE) incineration facilities occupy a structurally different position within the DH flexibility stack. Rather than being dispatchable against an electricity price signal, they operate in a heat-led mode. Thermal output is the primary production target, driven by waste throughput requirements or heat demand contracts, and electricity is generated as a byproduct at a fixed or minimally adjustable heat-to-power ratio \cite{beiron_combined_2020}. Flexibility provision from CHP and WtE is accordingly indirect, achieved through two mechanisms: adjusting the heat-to-power extraction ratio within the operating range of the turbine cycle, and buffering variable heat production against demand using thermal storage to decouple generation from consumption in time \cite{wang_investigation_2019}. 
+
+Waste incineration supplies roughly half of all Norwegian district heating - the highest share amongst the Nordic countries \cite{sandberg_framework_2018}. In Oslo, Hafslund Celcio's Klemmetsrud WtE plant represents the dominant base-load source in the system merit order, operating continuously with thermal output driven by waste incineration throughput rather than electricity market signals. This heat-led dispatch logic means that WtE capacity constrains the flexibility stack rather than contributing to it directly. Its inflexibility is compensated by the electrode boiler, heat pump capacity and accumulator tank storage. 
+
+\autoref{table2.2:p2h-comparison} summarises the key operational attributes of the three technology classes as they bear on the bedriftsøkonomisk dispatch model.
+%
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{>{\raggedright}p{3.0cm}
+                >{\raggedright}p{2.2cm}
+                >{\raggedright}p{2.2cm}
+                >{\raggedright}p{2.0cm}
+                >{\raggedright\arraybackslash}p{3.8cm}}
+    \toprule
+        \textbf{Technology} &
+        \textbf{Capex} &
+        \textbf{Opex driver} &
+        \textbf{Ramp rate} &
+        \textbf{Flexibility role} \\
+    \midrule
+        Electrode boiler &
+        Low &
+        Electricity price &
+        Near-instant &
+        Spot arbitrage; mFRR activation \\[4pt]
+        Large-scale heat pump &
+        High &
+        Electricity price (via COP) &
+        Minutes (cycling limits) &
+        Base/mid-merit heat source; constrained flexible operation \\[4pt]
+        CHP / WtE &
+        Very high &
+        Fuel / waste throughput &
+        Slow (thermal inertia) &
+        Indirect via thermal storage buffering \\
+    \bottomrule
+\end{tabular}
+\caption{Operational attributes of the three heat-supply technology
+classes relevant to flexibility dispatch in district heating. Electrode
+boilers and heat pumps are the power-to-heat (electricity-consuming)
+assets \cite{bloes_power--heat_2018}, \cite{david_heat_2017}, \cite{bach_integration_2016}, \cite{monie_power--heat_2022}, \cite{gronli_hvor_2025}, \cite{beiron_combined_2020}.}
+\label{table2.2:p2h-comparison}
+\end{table}
+
 
 \subsubsection{Thermal Energy Storage}
-% GUIDE: Accumulator tanks (short-duration, high-power) vs
-% BTES/PTES (seasonal, low-power). What the literature says about
-% storage value in balancing markets. Jaanto (2023) is the natural
-% reference for thermal storage under current electricity market
-% design and should anchor this subsection.
-% Cite: Hennessy et al. (2019), Sihvonen (2024), Jaanto (2023),
-% Li et al. (2016), SINTEF ZEN Report 47 (2023), Haraldrud
-% commissioning context.
+
+The dedicated thermal storage identified in \utsett{AUTOREF section 2.1.1} as the supply-side FTS buffer is what converts the power-flexibility action into a resource that can be shifted across time. It spans a wide envelope of power and duration, from short-duration accumulators suited to day-ahead arbitrage to seasonal store that decouple summer collection from winter demand. Where an asset sits on that envelope fixes which flexibility products it can bid into, following the buffer-parameter logic of \utsett{AUTOREF section 2.1.1}
+
+\utfyll{What is the daily heat delivery of Oslo's district heating compared to the accumulation tank size aka How long can the tank substitute for heat production?}
+
+Thermal accumulator tanks store pressurized hot water at district heating supply temperature inside insulated vessels. They are considered inexpensive amongst energy storage options, as heat water tanks costs between 50 and 100 times less per unit of stored energy compared to electrical storage \cite{hennessy_flexibility_2019}. Their round-trip thermal efficiency is high, on the order of $90-97\%$ under operating conditions; the Danish Energy Agency technology catalogue reports a full-cycle round-trip efficiency of $98\%$ (uncertainty band $96-99\%$) and a standby loss of about $0.2\%$ per day for large-scale steel accumulator tanks, so the operating-condition range used here is consistent with, and conservative relative to, that benchmark \cite{danish_energy_agency_energy_2025}. 
+
+As short-duration, high-power assets, accumulators charge and discharge at rates approaching the connected P2H plant capacity over timescales of hours, making them directly usable for spot-market arbitrage and for buffering the heat produced or displaced during an mFRR activation. The connected electrode boiler can deliver across the full activation window rather than only as long as the heat demand profile permits. Oslo's Haraldrud facility, commissioned in October 2023, is among Norway's largest operational DH accumulators, with a capacity in the order of $300-350MWh$. \avklar{Confirm Haraldrud's exact capacity and its charge/discharge rate. Comparable tanks (Heimdal, trondheim) can frame magnitude}
+
+Accumulator tanks are common in Danish, Finnish, and Swedish district heating but have historically been more scarce in Norway \cite{sandberg_framework_2018}. Outside Oslo, large-scale accumulator capacity in the Norwegian systems is limited, a technical asymmetry treated as a scope boundary in \utsett{AUTOREF section 3.7}
+
+Seasonal thermal energy storage technologies, principally pit thermal energy storage (PTES) and borehole thermal energy storage (BTES), operate on charge-discharge cycles of weeks to months, enabling the temporal decoupling of summer heat collection or waste-heat availability from winter heating demand. The four canonical underground storage typologies - tank, pit, borehole and aquifer - differ substantially in energy density. Tank TES holds roughly $60-80\frac{kWh}{m^3}$, gravel-water PTES roughly $30-50\frac{kWh}{m^3}$, BTES around $15-30\frac{kWh}{m^3}$, and $30-40\frac{kWh}{m^3}$ of stores thermal energy for ATES \cite{dahash_advances_2019}. Round-trip efficiencies are operationally lower than short-duration accumulators and depend strongly on storage utilization cycle; \cite{pan_long-term_2022} report a five-year-average measured storage efficiency of 90.1\% for the Dronninglund PTES at a high utilisation cycle of 2.16, against approximately 66\% for the Marstal PTES operated at a cycle close to 1.0. Power ratings are modest relative to storage volume, limiting participation in balancing markets. Denmark has deployed large-scale PTES extensively, with solar-coupled installations such as Vojens ($200.000 m^3$) and Dronninglund ($60.000 m^3$) \cite{dahash_advances_2019}, \cite{pan_long-term_2022}.
+
+The levelized cost of stored heat at the $100.000 m^3$ scale runs from $\~130\frac{\euro}{MWh}$ for an accumulation tank to about $160 \frac{\euro}{MWh}$ for the shallow pit, under European cost conditions \cite{dahash_techno-economic_2021}. In Noway, seasonal DH storage remains primarily at the demonstration stage. Kauko document a neighborhood-scale case study at Furuset in Oslo in which district alone reduces peak electricity demand by approximately $28\%$ relative to direct electric heating, while adding borehole seasonal thermal storage reduces peak district heating demand further by around $31\%$, and cuts $CO_2$ emissions by $20\%$ below the direct electric heating baseline \cite{kauko_assessing_2022}. The seasonal-storage configuration is not cost-saving under baseline conditions, however: it carries the lowest operational cost but the highest capital cost, leaving total system cost approximately 3\% above the electric-heating reference. It becomes competitive only when winter electricity prices double or when available grid capacity is reduced by more than $9 MW$ below the site's baseline of $22.6 MW$, a capacity the authors describe as unusually high and present as a special case rather than a representative neighborhood. These figures are therefore indicative at neighborhood scale and do not transfer directly to system scale. The commercial case for seasonal storage is constrained by long capital recovery periods relative to the spot-arbitrage revenues available in the NO1 price environment: unlike accumulators, PTES and BTES assets cannot recover capital cost through mFRR activation or short-horizon arbitrage alone, positioning them primarily as a socio-economic assets in the valuation framework of \utsett{AUTOREF: Section 2.5}. Thorvaldsen, in \cite{thorvaldsen_long-term_2024}, quantify this dynamic for a Norwegian residential setting under the Norwegian monthly-peak grid tariff structure: a strategy that co-optimizes seasonal thermal storage with the monthly-peak capacity tariff achieves a $4.3\%$ total-cost reduction relative to a tariff-only baseline, whereas a storage-only strategy that ignores the tariff signal produces a $69\%$ higher annual cost than the co-optimized case. The mechanism transfers in direction to the DH operator setting: tariff-unaware storage operation systematically under-performs, and the value of storage depends on accessible flexibility products and tariff signals rather than on stored capacity alone.
+
+\illu{Storage typology plot (power in MW on y-axis, duration in time on x-axis) - accumulator tank, BTES, PTES, pipeline storage.}
+
+The value attributed to any thermal storage asset is bounded by the flexibility products available for the stored energy to be sold into, the enabler layer of \utsett{AUTOREF: Section 2.1.1}. Jaanto, in \cite{jaanto_thermal_2023} examine thermal storage deployment under current European electricity market design and find that storage value is limited to the realized price spread across accessible trading windows: in the absence of reserve-market access, accumulators are confined to spot-arbitrage revenue, and seasonal storage captures even less due to low power ratings and poor temporal alignment with daily price signals. This finding applies directly to the Norwegian DH context. Without a flexibility product that compensates the district heating operator for system services beyond mFRR capacity payments, the commercial value of storage investment is anchored on NO1 spot-price variance, \utsett{Price-spread measurement/calculation in Section 2.1.2. - from Nordpool spot price analysis} The societal value of the same storage assets, in the form of avoided grid reinforcement, freed balancing capacity, and system-price suppression, accrues to Elvia, Statnett, and consumers rather than to the operator. The relationship between storage value and market design architecture is therefore a structural feature of the BØ/SØ gap, not a transient market condition.
 
 
+%--------------------------------------------------------------
+%--------------------------------------------------------------
 \subsection{Barriers to Flexibility in District Heating}
-% GUIDE: This is the empirical core of Chapter 2. Sneum (2021)
-% provides the barrier taxonomy as scaffolding. Function of this
-% section: lay out the barrier types as a taxonomy, with the
-% Norwegian condition stated factually under each type. The Nordic
-% comparison is concentrated in §2.3.5 ("Cross-Country Comparison")
-% as the closing move of the section — that's where the
-% taxonomy-and-facts hands off to synthesis. §2.4 then picks up
-% with Norway-as-a-system, not another country comparison.
 
+The corpus on district heating flexibility converges on a recurring set of mechanisms, spanning tariff design, market-product gaps, regulatory frictions, and institutional arrangements, that together separate the operators economic return on flexibility provision from its system-level societal value. The most systematic ordering of these mechanisms from \cite{sneum_barriers_2021}, categorizes them into a taxonomy of forty barriers grouped into nine categories, namely operational signaling, investment, permitting, ownership, district-energy technology conditions, grid access, physical environment, bounded rationality, and acceptance. This thesis collapses those nine categories into the four barrier types that organize the subsections below, mapping district-energy technology conditions, physical environment, and grid access onto technical barriers -- 2.3.1 --
+operational signaling and investment onto economic and market barriers -- 2.3.2 --
+permitting and ownership onto regulatory and policy barriers --2.3.3--
+and bounded rationality and acceptance onto institutional barriers -- 2.3.4--. \cite{sneum_barriers_2021} identifies the absence of a signal-providing scheme as the single barrier sufficient on its own to suppress flexibility, and finds that barriers of national origin dominate the taxonomy, which places the primary responsibility for removing them with national policy-makers rather than with the individual operators. In the resource-and-enabler terms of \utsett{AUTOREF: section 2.1.1}, every barrier in this taxonomy is a missing or adverse \textit{enabler}. The flexibility resource exists physically in the operator's electrode boilers, heat pumps, and accumulator, but markets, reserve products, and network tariffs either fail to reward its activation or actively penalize it. Degefa et al. and Sæle et al. make this split explicit, classifying markets, regulation, and tariffs as enablers separate from the flexibility resource itself \cite{degefa_comprehensive_2021}, \cite{saele_understanding_2023}. The four barrier types below are therefore a catalogue of the enablers that are absent or misaligned in the Norwegian case. \utsett{autoref - section 2.3.5} then sets the Norwegian condition under each barrier type against Denmark and Sweden, the two Nordic systems against which Norwegian district heating is most often measured.
+
+%--------------------------------------------------
 \subsubsection{Technical Barriers}
-% GUIDE: [NO] Accumulator penetration still limited outside Oslo;
-% grid connection capacity constraints for large P2H.
-% Cite: Hennessy et al. (2019), Kauko (2025), SINTEF ZEN (2023).
 
+The most visible technical constraint on district heating flexibility provision in Norway is the limited deployment of large-scale thermal storage. The Haraldsrud accumulator, commissioned in October 2023, is Oslo's principal dedicated DH storage asset. Large-scale accumulator capacity elsewhere in the Norwegian system remains limited, confining many operators to within-hour load modulation rather than the multi-hour to day-ahead dispatch optimization that storage enables \cite{hennessy_flexibility_2019}, \cite{sandberg_framework_2018}. Hafslund Celsio's Oslo system, with both a large P2H fleet and dedicated storage, represents a ceiling of Norwegian DH flexibility potential rather than a median, so findings from the Oslo case do not transfer directly onto other Norwegian operators without adjustments in their physical flexibility assets. 
+
+New P2H capability additions face grid connection constraints that delay deployment and cap installed capacity below the economically optimal level. The broad electrification push across sectors has loaded distribution-grid networks and expanded connection queues. In Oslo, applications for roughly $1000MW$ of new electricity load stand against only about $200MW$ of reserved grid capacity, so a DH operator seeking to add electrode boiler capacity may face multi-year connection timelines and capacity restrictions \cite{Thema_fjernvarme_2024}. This caps the P2H capacity an operator can install below economically optimal levels, independent of the downstream market-access question.
+\avklar{Verify whether this directly impacts P2H. Verify the "economically optimal levels"}
+
+Network thermal dynamics, including supply temperature frameworks, pipe thermal inertia, and distribution-side control constraints, impose physical limits on the ramp rates achievable through network-level flexibility activation. These are notes as a boundary condition of the economic feasibility in \utsett{AUTOREF: Section 3.7}, but are not subject to detailed analysis in this thesis \cite{vandermeulen_controlling_2018}, \cite{guelpa_demand_2021}.
+
+Across the literature, technical barriers are consistently treated as the most tractable of the four barrier types. Of the forty barriers categorized by \cite{sneum_barriers_2021}, only two concern thermal storage - which the author characterizes as a "no-regrets technology", often seen as the default go-to investment to increase system performance. The bulk of the gap lies in the economic, regulatory, and institutional categories that follow \cite{sneum_barriers_2021}.
+
+
+%-------------------------------------------------------
 \subsubsection{Economic and Market Barriers}
-% GUIDE: [NO] effektledd capacity tariff structure (Elvia);
-% mFRR minimum bid size (5–10 MW); NO1 spot price structure (less
-% volatile than DK1/DK2, less incentive for P2H arbitrage).
-% Cite: Sneum \& Sandberg (2018), Kirkerud (2016), Monie (2022),
-% THEMA (2024), AFRY/Grønli (2025), Hafslund Celsio blog (2025).
-% Open structural gap: no academic treatment of effektledd as a
-% flexibility barrier in its own right — flag in §2.6 as a
-% literature gap, not just a citation gap.
+
+The single most cited economic barrier in the Norwegian DH flexibility literature is the capacity based grid tariff, which is calculated by taking the average of the three highest consumption peaks for the month and applied as the grid-charge for all power consumption that calendar month. This is regardless of when those peaks occurred, or what the system conditions were like at that moment. This is a settlement basis the regulator itself has acknowledged can result in a marginal network cost that does not reflect actual network costs when the peaks occurred \cite{eriksen_proposed_2022}, \cite{Thema_fjernvarme_2024}. The Norwegian Energy Regulatory Authority (RME) corrected this distortion for small low-voltage consumers by moving them to a daily-peak settlement, while retaining the monthly-peaks settlement for the larger customer class, in which a DH operator the size of Hafslund Celsio sits \cite{eriksen_proposed_2022}. For a district heating operator using electric boilers to store thermal energy during low-price, low-demand hours, any load increase could trigger a new monthly peak which increases the capacity charge for all other consumption that month - Even if the load increase leads to a reduction in the aggregate system peak, and could defer grid reinforcement needs at the network level. The capacity tariff thereby penalizes precisely the flexibility behavior it should incentivize. A paper quantified this effect for a Norwegian DH plant was done in \cite{kirkerud_impacts_2016} and found that electrode boiler utilization varies between $2-17\%$ of annual operating hours depending solely on the grid tariff structure applied, without any market access barriers being considered. The mechanism generalizes beyond Norway, touch the Norwegian capacity tariff structure is of the most severe. Skytte et al. \cite{skytte_design_2017} show for the Danish system that conventional grid tariffs can "obliterate the price signals from the wholesale electricity market". Under their 2014 danish case, an electric boiler is the cheapest heat source in only about $6\%$ of annual hours, a share that rises to roughly $74\%$ under a flat grid fee structure. 
+
+
 
 \subsubsection{Regulatory and Policy Barriers}
-% GUIDE: [NO] DH price regulation §5-5 (fjernvarmeloven) limits
-% pricing flexibility; electricity tax at 0.60 øre/kWh already low
-% (comparable to DK 0.80 øre/kWh — limited room here); CO₂ levy on
-% waste incineration (830 NOK/tonn held); Norgespris extension to
-% fjernvarme customers and its compound effect on operator revenue.
-% Cite: E24/Energidepartementet (2025), Odgaard \& Djørup (2020),
-% Billerbeck et al. (2024).
+
+
+
+
+
 
 \subsubsection{Institutional Barriers}
-% GUIDE: [NO] No aggregation framework; DSO–TSO coordination gaps;
-% Hafslund Celsio as a vertically integrated actor with mixed
-% incentives (owns both DH and grid assets).
-% Cite: Sneum (2021), Selvakkumaran et al. (2021), Ma et al.
-% (2020), Brolin \& Pihl (2020).
+
+
+
+
+
 
 \subsubsection{Cross-Country Comparison: Norway vs Denmark and Sweden}
-% GUIDE: Closing move of §2.3. This is where the [NO] / [DK/SE]
-% material lives — pulled out of the individual barrier subsections
-% so they stay clean as taxonomy. Quantify the most policy-relevant
-% differences:
-%   - Grid tariff: effektledd vs DK power tariff → cost asymmetry
-%   - Market access: mFRR bid size → effective exclusion of smaller
-%     systems
-%   - Electricity price volatility: NO1 price duration curves vs
-%     DK1/DK2
-%   - DH penetration: ~65% Oslo vs ~50% Stockholm, ~60% Copenhagen
-%   - Aggregation rules, P2H electricity tax treatment, sector
-%     coupling governance
-% Sweden underemphasised in v0/v1 — Fernqvist et al. (2023) and
-% Atabaki et al. (2026) earn space here for SthlmFlex, aggregation,
-% heat pump scale. Treat as a three-country comparison, not a
-% two-country one.
-% Cite: Sandberg, Sneum \& Trømborg (2018), Sneum \& Sandberg
-% (2018), Kirkerud (2016), Fernqvist et al. (2023), Atabaki et al.
-% (2026).
+
+
+
 
 
 
 \subsection{The Norwegian Context}
-% GUIDE: §2.4 is no longer a country comparison — the comparison
-% closed §2.3. Function here: Norway-as-a-system. Why these
-% barriers compound in Norway in a way they don't elsewhere — the
-% hydropower legacy, the bidding zone structure, the grid
-% constraint trajectory, the policy stack of the last decade. The
-% section should leave the reader convinced that "Norwegian DH
-% flexibility" is its own analytical object, not a special case of
-% "Nordic DH flexibility".
+
+
+
+
 
 \subsubsection{Energy System Characteristics}
-% GUIDE: ~90% hydropower; bidding zone structure; demand profile
-% (high winter peak from direct electric heating legacy); DH
-% market structure (Oslo dominant; Trondheim, Bergen secondary);
-% Hafslund Celsio capacity figures — verify 283 MW headline vs
-% per-site sum ≈ 131–137 MW, use the conservative figure;
-% Haraldrud accumulator ~300 MWh (commissioned Oct 2023).
-% Cite: NVE LA23, IEA Norway (2022), Vista Analyse (2023).
+
+
+
+
+
 
 \subsubsection{Policy Evolution 2015--2025}
-% GUIDE: Chronicle the regulatory changes that have shifted the
-% attractiveness of DH flexibility over the past decade:
-%   2015: NVE grid tariff reform discussions begin
-%   2018: Flex4RES Nordic report
-%   2022: IEA Norway review flags barriers
-%   2023: SINTEF ZEN Report 47; Haraldrud accumulator goes live
-%   2024: THEMA report commissioned by Hafslund Celsio
-%   2025: Norgespris extended to fjernvarme customers;
-%         CO₂ levy on waste incineration held at 830 NOK/tonn
-% Verify timeline against primary government documents (Grønn Bok,
-% Statsbudsjettet) before citing specific figures.
-% Cite: Hafslund Celsio (2025), E24/Energidepartementet (2025),
-% Vista Analyse (2023), NVE LA2050.
+
+
+
+
+
 
 \subsubsection{Why Norway Is Its Own Case}
-% GUIDE: Short closing subsection (~half a page). Argue, don't list:
-% how the energy system characteristics (§2.4.1) and the policy
-% stack (§2.4.2) interact to make the Norwegian case structurally
-% different from any single Nordic comparator. This is the bridge
-% to §2.5 — the value-gap definitions only make sense once the
-% reader understands that the Norwegian system has its own
-% incentive geometry.
+
 
 
 
 
 \subsection{Commercial and Socio-Economic Value}
 
-% GUIDE: Conceptual hinge of the thesis. Defines the two valuation
-% perspectives that the entire gap analysis rests on. Placed here
-% (after the empirical body) so the reader arrives with concrete
-% domain knowledge. Each subsection: ~300–500 words.
+
+
+
+
 
 \subsubsection{Defining the Two Perspectives}
-% GUIDE:
-% Commercial /(bedriftsøkonomisk - HVA ER ET BRA ORD FOR DET?!?!?!): ash flows accruing to the operator only.
-%   Revenue: spot arbitrage (buy cheap, store, displace peak);
-%            reserve market payments (mFRR, aFRR capacity +
-%            activation); peak load charge avoidance.
-%   Cost: electricity purchase, grid tariff (effektledd), capital
-%         servicing.
-%   Excludes: value to the grid, value to other market participants,
-%             environmental effects.
-%
-% Socio-economis /(Tror det er riktig for samfunnsøkonomisk??): total welfare including externalities.
-%   Additional value drivers beyond what the operator captures:
-%   - Avoided grid reinforcement (accrues to DSO/society via lower
-%     tariffs)
-%   - Freed grid capacity → faster connection of new loads
-%   - System price effects (merit-order suppression during peak)
-%   - Displaced fossil or high-cost peaking generation (CO₂ savings)
-%   - Optionality value (resilience)
-%
-% Be explicit: these are not two measurements of the same thing;
-% they are two accounting perimeters applied to the same asset.
+
+
+
+
 
 \subsubsection{The Value Gap Mechanism}
-% GUIDE: One tight paragraph. The mechanism:
-%   (1) Thermal flexibility reduces system costs (avoided grid
-%       investment, freed capacity, suppressed peak prices).
-%   (2) Those cost reductions accrue to DSOs, TSO, and consumers —
-%       not to the DH operator.
-%   (3) The operator bears the full cost and faces tariff structures
-%       that actively penalise flexible load.
-%   (4) No transfer mechanism (flexibility payments, tariff
-%       exemptions, aggregation credits) bridges the gap.
-%   → Result: a structural underinvestment equilibrium. The gap is
-%     not a market failure in the textbook sense; it is a regulatory
-%     design choice that has not yet been updated to reflect the
-%     changed system conditions.
-% Cross-reference §2.3 (Barriers) for the specific mechanisms that
-% produce the gap, and Chapter 3 (Methodology) for how the gap is
-% quantified.
+
+
+
+
 
 
 \subsection{Literature Review: Field Overview and Research Gap}
-% GUIDE: This is the short literature-review sub-section — explicitly
-% NOT a full structural review. Function: (a) one short paragraph on
-% how the body of sources was assembled (Research Rabbit + targeted
-% Scopus, no formal PRISMA), (b) the research-gap matrix that maps
-% the field, (c) where this thesis sits in the matrix, (d) what
-% remains as future work for others.
-% Length target: 2–3 pages including the matrix figure.
-% Tone: the matrix carries the analytical weight. Prose is there to
-% set up and read off the matrix, not to do an independent
-% literature traversal.
+
+
+
+
+
 
 \subsubsection{How the Field Was Mapped}
-% GUIDE: One short paragraph (~120 words). State briefly: starting
-% point (Research Rabbit seeds from supervisor-supplied papers +
-% own keyword seeding), expansion path, the targeted Scopus
-% supplementation for specific themes (grid tariffs, balancing
-% market access, Norwegian DH), and the size of the assembled set
-% (~62 articles at Stage 1). Acknowledge that this is an
-% informational review, not a structural systematic review. Defer
-% search strings / inclusion criteria to an appendix if they're
-% needed at all.
+
+
+
+
+
 
 \subsubsection{Research-Gap Matrix}
-% GUIDE: This is the centrepiece. Two axes, suggested as defaults
-% — refine before drafting:
-%   X-axis: analytical scope
-%     [firm-level | system-level | multi-system]
-%   Y-axis: valuation perspective
-%     [bedriftsøkonomisk only | samfunnsøkonomisk only | paired]
-% Plot the major sources (Sneum & Sandberg 2018, Monie 2022, THEMA
-% 2024, Fernqvist et al. 2023, Atabaki et al. 2026, Vista Analyse
-% 2023, Jaanto 2023, Selvakkumaran 2021, etc.) into the cells.
-% Identify visually the cells that are sparsely populated. The
-% claim of this thesis: it occupies the (firm-level × paired) cell,
-% which is empty or near-empty for Norwegian DH.
-% Implementation: build the matrix figure in TikZ or as a clean
-% PDF/PNG. Refer to it as Fig. 2.1.
-% Open question: is "valuation perspective" the right Y-axis, or
-% should it be "geographic scope (NO / Nordic / EU)"? Decide based
-% on which view makes the thesis's positioning most legible. 
+
+
+
+
+
 
 \subsubsection{Where This Thesis Fits and What It Adds}
-% GUIDE: Read the matrix back. Name the cell the thesis occupies
-% and the two adjacent cells it draws from (single-perspective
-% Norwegian studies + paired Nordic studies). State explicitly:
-%   - The gap is not "no one has thought about this" — it is "no
-%     one has done it for Norwegian DH at the firm level with both
-%     perspectives".
-%   - That gap is the contribution claim from §1.5 made
-%     bibliographically concrete.
+
+
+
+
+
 
 \subsubsection{Adjacent Gaps Left for Future Work}
-% GUIDE: ~5–8 lines. List 2–3 nearby cells the thesis does NOT
-% fill — e.g., multi-system paired valuation, end-user welfare
-% effects from flexibility activation, business-model design for
-% DH flexibility (links to §5.3). Helps anchor §5.5 (Future Work)
-% later without forcing the reader to backtrack.
 
 
 

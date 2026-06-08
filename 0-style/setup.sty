@@ -103,10 +103,10 @@
 \usepackage{xcolor}
 \usepackage[colorinlistoftodos,prependcaption]{todonotes}
 \setuptodonotes{inline}
-\newcommandx{\skriv}[2][1=]{\todo[linecolor=orange,backgroundcolor=orange!25,bordercolor=orange,#1]{#2}}
-\newcommandx{\nb}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\utfyll}[2][1=]{\todo[linecolor=orange,backgroundcolor=orange!25,bordercolor=orange,#1]{#2}}
+\newcommandx{\avklar}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
 \newcommandx{\illu}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
-\newcommandx{\research}[2][1=]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,#1]{#2}}
+\newcommandx{\utsett}[2][1=]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,#1]{#2}}
 %\newcommandx{\change}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
 %\newcommandx{\utdyp}[2][1=]{\todo[linecolor=olive, backgroundcolor=olive!25, bordercolor=olive,#1]{#2}}
 
@@ -121,6 +121,8 @@
 \usepackage{color}
 \usepackage{multicol}
 \usepackage{enumitem}   % Endrer enumerate, itemize og description
+\setlist{itemsep=4pt, topsep=4pt, parsep=0pt, partopsep=0pt}
+%\setlist{parsep=0pt, partopsep=0pt}
 % --- Image ---
 \usepackage{graphicx}   % Handle images
 \usepackage{wrapfig}    % Wrap text around images
@@ -140,6 +142,7 @@
 \usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage{textgreek}
+\usepackage{eurosym} % Euro
 
 
 % -----------------------------------------------------
