@@ -120,6 +120,20 @@
 \usepackage{comment}    % Comment blocks of text
 \usepackage{color}
 \usepackage{tcolorbox}
+\definecolor{keypointframe}{HTML}{D55E00}
+\definecolor{keypointback}{HTML}{FDF3EC}
+\tcbuselibrary{breakable}
+\newtcolorbox{keypoint}[1][]{
+    breakable,
+    colback=keypointback,
+    colframe=keypointframe,
+    boxrule=0.8pt,
+    arc=2pt,
+    left=7pt, right=7pt, top=6pt, bottom=6pt,
+    before skip=10pt, after skip=10pt,
+    coltitle=white, fonttitle=\bfseries,
+    #1
+}
 \usepackage{multicol}
 \usepackage{enumitem}   % Endrer enumerate, itemize og description
 \setlist{itemsep=4pt, topsep=4pt, parsep=0pt, partopsep=0pt}
