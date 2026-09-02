@@ -1,64 +1,668 @@
 \section{Results and Socio-Economic Valuation}
 \label{4-sec:4 results}
 
-\subsection{Commercial/(DH Operator Business) Results}
+This chapter reports what the analysis of \autoref{3-sec:3} found, in the order the four stages of \autoref{fig:3.2 methodology spine} produce it. \autoref{4-subsec:4.0 technical envelope} reports how the dispatch uses the physical resource sized in \autoref{3-subsec:3.3 technical envelope}, how the model fares against the public record and against its own tests, and what its dispatch looks like across a week and across a year. \autoref{4-subsec:4.1 DH operator results} reports the operator's ledger: the capability ladder, the cost levels, reserve participation and the accumulator. \autoref{4-subsec:4.2 triangulated social value} prices the socio-economic channels on the same dispatch. \autoref{4-subsec:4.3 valuation gap} divides the socio-economic total between the district heating operator, Hafslund Celsio, and the parties that receive the remainder, and attributes the measured quantities across the barrier types of \autoref{2-subsec:2.3 barriers}. \autoref{4-subsec:4.1.4 sensitivity analysis} reports how far each result moves when its inputs do. Every run is one of the six scenarios of \autoref{tab:3.5.2 scenario stack}, two tariff structures crossed with three reserve-access levels, solved on the 2023, 2024 and 2025 delivery years and measured against a no-flexibility counterfactual on its own tariff structure. The scenario numbering is the one \autoref{fig:3.5.2 scenario stack} declares, and the rungs R0 to R3 are those of \autoref{tab:3.5.1 ladder}. Two rules from \autoref{3-sec:3} govern every number below. A cost level is model output on the operator's dispatch perimeter, and outside 2024 it is a counterfactual under the held 2024 policy; the differences carry the argument. And a quantity priced with a banded unit value is reported as a band with its endpoints named, never as a point.
+
+%------------------------------------------------------------
+%------------------------------------------------------------
+\subsection{The Physical Resource and the Modelled Plant}
+\label{4-subsec:4.0 technical envelope}
+
+The envelope of \autoref{3-subsec:3.3 technical envelope} is a stock; this subsection reports what the dispatch does with it, and whether the plant the model dispatches is the plant that exists. \autoref{4-subsec:4.0.1 envelope in use} reports which of the three power tiers bind, how often, and what the technical distance between them is worth. \autoref{4-subsec:4.0.2 validation} reports the outcome of every test \autoref{3-subsec:3.8 model validation} defined, and explains the two years in which the model and the record part company, one of which the rest of the chapter has to keep returning to. \autoref{4-subsec:4.0.3 dispatch} shows the dispatch itself, across a winter and a summer week and across the accumulator's year.
+
+%------------------------------------------------------------
+\subsubsection{The Envelope in Use}
+\label{4-subsec:4.0.1 envelope in use}
+
+The three power tiers of \autoref{tab:3.3 technical envelope} are 292.6 MW of installed electric-boiler capacity, about 250 MW that the heat network lets the fleet draw in any one hour, and 29 MW that may be sold into the manual reserve market. The dispatch meets all three, and it meets them in the order the envelope predicts. In every interruptible-tariff run in every delivery year the fleet's highest hourly grid draw is exactly 250 MW: the concurrent bound is reached, and it binds in 374 of the 8,784 hours of 2024, 176 hours of 2023 and 220 hours of 2025, between 2.0 and 4.3 per cent of the year, against 211, 59 and 121 hours in the respective no-flexibility counterfactuals. Under the standard tariff the same fleet peaks at 221 MW in 2024, 127 MW in 2023 and 197 MW in 2025 at today's access, and the bound never binds. The monthly capacity charge holds the peak below the network limit before the network limit is reached, which is the stacking of two constraints that assumption A9 of \autoref{3-subsec:3.4.3 assumptions} describes, observed in the runs rather than assumed.
+
+What the outer of the two constraints costs is the first attributed quantity of the chapter. Re-solving the baseline run with the concurrent bound moved from 250 MW to the 292.6 MW the concession licenses and the network already connects, the thermal-bottleneck sensitivity of \autoref{3-subsec:3.5.2 stack}, lowers the annual net cost by 2.22 MNOK in 2024, by 0.66 MNOK in 2023 and by 1.37 MNOK in 2025, and raises the flexibility value by 1.31, 0.57 and 0.85 MNOK in the same years. Under the standard tariff the same relief is worth nothing: the 2024 standard-tariff run's cost moves by less than 0.001 MNOK, because a fleet that the capacity charge stops at 221 MW cannot use headroom above 250. The relieved state is a heat network debottlenecked to capacity that is already standing. It is not the connection queue of \autoref{2-subsec:2.3.1 tech barriers}, and the figure prices no grid reinforcement.
+
+The other distance \autoref{fig:2.4.1 three tier capacity} names, between the 29 MW reserve-eligible today and the concurrent bound, is priced in \autoref{4-subsec:4.1.3 reserve market participation} from a continuous sweep of the access constraint, and its result is stated here so that the two distances stand in the same units. Widening reserve access from 29 MW to 250 MW lowers the 2024 baseline run's annual net cost by 135.9 MNOK, from 631.97 to 496.06 MNOK, and widening it further to the licensed 292.6 MW lowers it by nothing more. The regulatory distance is worth roughly sixty times the technical one in the same year, and the same 250 MW bound caps both the dispatch and the reserve the dispatch can back.
+
+On the energy side the accumulator does the work the envelope assigns it and runs into both of its limits. In the 2024 baseline run the store discharges 99.8 GWh over the year, about two hundred full cycles of its 495 MWh usable volume. Over the 365 complete days of that year it drains to the 55 MWh non-cyclable floor on 113 days and reaches the 550 MWh nameplate on 77, so on half the days of the year the tank as sized, rather than the price signal, is what binds; \autoref{4-subsec:4.1.5 storage sizing} sweeps the size for that reason. The network's own thermal mass, named in \autoref{3-subsec:3.3 technical envelope} as a component of the resource, stays unquantified, and the sensitivity of the energy bound to the admissible temperature band that \autoref{3-subsec:3.7 gap and attribution} anticipated cannot be reported, because the network water volume and the temperature band it would need were not obtained. The quantified energy stock remains the accumulator alone, and it remains a lower bound.
+
+The heat side of the envelope closes at 557.5 MW: waste incineration at 155 MW, heat pumps at 55 MW, the electric boilers at 247.5 MW of delivered heat from 250 MW of draw, and the accumulator at 100 MW of discharge. Above that load the peak boilers run by necessity. Demand exceeded it in 273 hours of 2024, 91 hours of 2023 and 10 hours of 2025, against maximum loads of 763, 693 and 578 MW. The operator's own account puts the load up to which everything in the system is flexible at roughly 550 to 600 MW (operator interview, Hafslund Celsio, 25 June 2026), and the capacity frame reproduces that ceiling from the concession inventory and the operator's stated concurrent bound alone.
+
+%------------------------------------------------------------
+\subsubsection{Validation Against the Public Record and the Model's Own Tests}
+\label{4-subsec:4.0.2 validation}
+
+\autoref{fig:4.1 validation share} sets the model's electric-boiler share of heat production against the share Hafslund Celsio reports to the national district heating register, for every year of the five-year bound \cite{norsk_fjernvarme_fjernkontrollenno_nodate}. The modelled share tracks the observed one across the five years, with a rank correlation of $+0.90$, and sits below it in every one of them, by a mean of 6.3 percentage points: 3.5 points in 2021, 10.3 in 2022, 10.4 in 2023, 4.4 in 2024 and 3.1 in 2025. The test carries a band of nine percentage points against a sixteen-year observed range of 12.5 to 30.7 per cent, so the share test passes in 2021, 2024 and 2025 and fails in 2022 and 2023. The annual delivered volume, tested in the same pass against the same register, matches within 0.26 per cent in 2024 and within 20 MWh in 2023 and 2025, so the misses are misses of dispatch and not of the demand series. The model runs the boilers less than the operator does in every year, and by far the most in two of them.
+
+% C4-V1
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/4. Results/fig-4-validation-share.pdf}
+    \caption{The model's electric-boiler share of heat production against the share Hafslund Celsio reports to the national district heating register \cite{norsk_fjernvarme_fjernkontrollenno_nodate}, for the five years the model solves. The modelled share is the baseline scenario's delivered boiler heat over delivered demand in each year.}
+    \label{fig:4.1 validation share}
+\end{figure}
+
+\autoref{fig:4.1 validation change} makes the point a level comparison cannot. It plots the four year-to-year changes in the modelled share against the observed ones, and all four agree in direction, with a correlation of $+0.94$ on the change itself. The thesis rests on differences within a year rather than on levels, and the model reproduces the direction of every movement in the record it can be tested against.
+
+% C4-V2b
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.55\textwidth]{Graphics/4. Results/fig-4-validation-years.pdf}
+    \caption{The same five years ordered by the observed share, with the modelled share beside each and the gap in percentage points. The four year-to-year changes agree in direction between model and record; the two largest gaps are the two years \autoref{4-subsec:4.0.2 validation} explains.}
+    \label{fig:4.1 validation change}
+\end{figure}
+
+The two failing years fail for different reasons, and neither reason is the activation rule, because 2021 runs on the same binary rule and passes. 2022 is the energy-crisis year. Its mean day-ahead price in NO1 was 1{,}939 NOK/MWh, four times the 487 NOK/MWh of 2024, in the year the Russo-Ukrainian war disrupted European gas supply and drove the price spikes of 2021 and 2022 \cite{NVE_langsiktig_2023}, to which Norway responded with the retail support scheme of \autoref{2-subsec:2.4.2 policy evolution} \cite{iea_-_international_energy_agency_norway_2022}. A cost-minimising dispatch all but stops running electric boilers at that price level, at 2.2 per cent of production, and the operator ran them at 12.5 per cent regardless. The price level alone carries that year.
+
+2023 is the case the rest of this chapter has to keep returning to, because it is the outlier in every result below, and its explanation is one mechanism. The obvious hypothesis fails: 2023 was not an expensive year in the sense that matters. Its mean price of 761 NOK/MWh is the same as 2021's 758, and it had seven times as many hours under 300 NOK/MWh as 2021, 2{,}207 against 310, and more than twice as many under 400. On the count of cheap hours alone the boilers should have run more in 2023 than in 2021. They ran roughly half as much, 182 GWh against 341. \autoref{tab:4.1 2023 mechanism} shows what separates the two years: when the cheap hours fell. In 2021, 67 per cent of the hours under 400 NOK/MWh fell in the October to March heating season; in 2023, 18 per cent did, and three quarters of them fell in July, August and September, when Oslo's heat load is at its summer minimum. Mean heat demand in 2023's cheap hours was 103 MW against a year-round mean of 228, a ratio of 0.45, where in 2021 the cheap hours were above-average demand hours at a ratio of 1.13. Stated from the other side, the correlation between hourly heat demand and the day-ahead price in 2023 was $+0.68$, the highest of the five years: cold hours were expensive hours. A boiler can only exploit a cheap hour if there is heat to make in it, and in 2023 the opportunity thermal flexibility lives on, cheap power arriving while heat is wanted, barely existed. The value of the flexibility is a product of the price level and of the coincidence of low prices with heat load, and the 2021 to 2023 pair isolates the second factor because the first is held equal. That is a result in its own right, and it is the reason 2023 sits low on the ladder, loads the coincident peak, carries the smallest tariff barrier and returns a negative gap in the subsections below. What it does not explain is the model's under-dispatch: the operator ran the boilers at 19.5 per cent in 2023 anyway, and whatever made that rational sits outside the design, as \autoref{3-subsec:3.10 limitations} states.
+
+\begin{table}[h]
+\centering
+\caption{Why 2023 differs from 2021 at the same price level. Every row is measured on the baseline scenario's own input series and dispatch. Cheap hours are hours with a day-ahead price under 400 NOK/MWh unless stated otherwise.}
+\small
+\begin{tabular}{p{7.4cm} r r}
+\toprule
+\textbf{Measured} & \textbf{2021} & \textbf{2023} \\
+\midrule
+Mean day-ahead price, NOK/MWh & 758 & 761 \\
+Hours under 300 NOK/MWh & 310 & 2{,}207 \\
+Hours under 400 NOK/MWh & 1{,}173 & 2{,}524 \\
+Share of the cheap hours falling in October to March & 67.3\% & 17.6\% \\
+Mean heat demand in the cheap hours, MW & 250.2 & 103.2 \\
+Year-round mean heat demand, MW & 221.2 & 227.9 \\
+Correlation of hourly heat demand with the day-ahead price & $+0.27$ & $+0.68$ \\
+Electric-boiler heat delivered, GWh & 341.1 & 182.3 \\
+Flexibility value, MNOK & 144.94 & 45.01 \\
+\bottomrule
+\end{tabular}
+\label{tab:4.1 2023 mechanism}
+\end{table}
+
+The remaining tests of \autoref{3-subsec:3.8 model validation} are reported in \autoref{tab:4.1 validation}, group by group, and three things in the table need more than a row. The first is the register test itself, which tests two quantities and not five: the code compares the flexible-electricity share and the annual delivered volume against the register, and the sign, rank order and recovered-heat share of the other sources are not tested against it, because the register extract the model carries holds the boiler share and the annual total alone. The second is the audited-accounts reading, which is an order-of-magnitude comparison and is asserted as nothing more. The model's 2024 baseline net cost of 632 MNOK on 1.92 TWh of delivered heat is read against the operator's audited 2025 figures, an operating profit of 253 MNOK and an after-tax result of $-$52 MNOK on 1.63 TWh sold \cite{hafslund_arsrapport_nodate}, a cost-only dispatch ledger against a full profit and loss, and it is read no more closely than that. The third is the corpus band on reserve revenue. The modelled capacity payment of 79{,}300 EUR per MW per year at the 2024 baseline sits above the 30{,}000 to 50{,}000 EUR band, which was calibrated on the winter-only reserve regime that ran to 2023; a daily market clearing across the whole year is expected to sit above it, so the value is reported and not failed, and the reading rule of \autoref{3-subsec:3.8 model validation} is what makes that a report rather than an excuse. Storage arbitrage, at 2{,}324 EUR per MWh of nameplate storage per year, sits at the low end of its 2{,}000 to 15{,}000 band, where a compressed NO1 price spread was expected to put it.
+
+\begin{table}[h]
+\centering
+\caption{Outcomes of the validation programme of \autoref{3-subsec:3.8 model validation}, on the build every number in this chapter is read from. Nothing was tuned in response to any row. A failing row is diagnosed in the text.}
+\footnotesize
+\begin{tabular}{p{1.9cm} p{5.6cm} p{1.5cm} p{4.6cm}}
+\toprule
+\textbf{Group} & \textbf{Test} & \textbf{Outcome} & \textbf{Reading} \\
+\midrule
+Public record & Electric-boiler share against the register, per year & Pass 2021, 2024, 2025; fail 2022, 2023 & Under-dispatch in every year; the two failures are explained above \\
+ & Annual delivered volume against the register & Pass & Within 0.26\% in 2024, within 20 MWh in 2023 and 2025 \\
+ & Order of magnitude against the audited accounts & Reported & Cost-only ledger against a full profit and loss; same order \\
+\addlinespace
+Emergent & Load level above which the peak fleet runs in every hour & Reported & 458 MW in 2024 and 2025, 432 MW in 2023; the heat-side ceiling of the frame is 557.5 MW \\
+ & Boiler draw in the 88 dearest hours of the year & Pass, with one qualification & The counterfactual runs the boilers in at most 2 of 88 hours; the flexible run runs them in 18 to 32, all reserve-backing hours \\
+\addlinespace
+Published bands & Reserve capacity revenue per MW & Above band, reported & 79{,}300 EUR/MW/yr against a 30{,}000 to 50{,}000 band calibrated on a winter-only regime \\
+ & Storage arbitrage value per MWh & Pass & 2{,}324 EUR/MWh/yr, low end of 2{,}000 to 15{,}000 as expected in NO1 \\
+\addlinespace
+Arithmetic & Ledger reconstructs the objective & Pass, all 18 runs & Exact \\
+ & Hourly heat balance closes & Pass, all runs & Exact \\
+ & Shed reserve does not exceed draw & Pass under a scale-relative tolerance & Worst residual $3.2 \times 10^{-6}$ MW in one hour on four applied-access runs \\
+ & Store never charges and discharges in the same hour & Fail, 5 of 18 runs & Forced heat disposal under a binding dump cap; diagnosed below \\
+ & Committed reserve clears the minimum bid size & Pass & No sub-floor commitment in any run \\
+ & Reference runs commit no reserve & Pass & \\
+ & Raising the access ceiling never raises cost & Pass, all three years & Feasible sets nest \\
+ & Flexibility never raises cost against its own counterfactual & Pass, all three years & \\
+ & Standard tariff costs more than interruptible & Holds, all three years & Reported, not asserted \\
+ & Waste incinerator holds its minimum load & Pass & \\
+ & Shadow price on the access ceiling matches the finite-difference slope & Fail, all 6 curves & The dual sums one of two capped directions; diagnosed below \\
+\addlinespace
+Sign & Down-activation raises the meter and stays within the commitment & Pass & \\
+\bottomrule
+\end{tabular}
+\label{tab:4.1 validation}
+\end{table}
+
+The two emergent tests come out the way the operator describes the plant, with one instructive exception. The load level at which the dispatch runs the peak boilers in every hour is 458 MW in 2024 and 2025 and 432 MW in 2023, about a hundred megawatts below the operator's 550 to 600 MW band. The difference is choice rather than necessity: the pellet tranche of \autoref{tab:3.4.2 peak stack} undercuts electric heat whenever the day-ahead price exceeds roughly 530 NOK/MWh, and cold hours are expensive hours, so the peak fleet is dispatched on price well before the heat side of the envelope closes at 557.5 MW, and the physical ceiling itself lands inside the operator's band. The behavioural test is the one with the exception. In the 88 dearest hours of 2024 the no-flexibility counterfactual runs the electric boilers in two hours at a mean 0.2 MW of heat, and in no hour at all in 2023 and 2025; the operator abstains from boiler operation in the highest-price hours without exception (operator interview, Hafslund Celsio, 25 June 2026). The flexible baseline run breaks that rule in 32 of the 88 hours of 2024, 18 of 2023 and 27 of 2025, at a mean of 10.4, 5.9 and 8.5 MW of heat, and every one of those hours carries a reserve commitment that the boiler is backing. The model departs from the operator's stated practice only where a reserve obligation forces it to, and the operator held no such obligation in the two years before it entered the market. That is the reserve-backing mechanism of \autoref{3-subsec:3.6 socio-economic valuation}, met here for the first time in the price-ranked hours rather than the demand-ranked ones.
+
+Three tests fail on the current build, and each is diagnosed before it is described, as \autoref{3-subsec:3.8 model validation} requires; nothing was tuned in response to any of them. The first is the 2023 share test above. The second is the test that the store never charges and discharges in the same hour. It fails in five of the eighteen runs, all at partial or applied access, in between 2 and 64 hours of the year, with between 94 and 2{,}944 MWh cycled through the overlap. In every one of those hours the dump coolers stand at their 62.5 MW capacity, the waste incinerator sits on its minimum-load floor and a down-regulation commitment is live. The optimisation is disposing of must-run heat it has nowhere else to put, by cycling the tank and paying the round-trip loss to destroy it, and the cycling charge prices that at between 0.011 and 0.068 per cent of the objective. It is a priced dispatch decision under a binding physical constraint, and forbidding it would need the binary variables the formulation excludes. The third is the consistency test between the shadow price on the access ceiling and the finite-difference slope of the access curve, which fails on all six curves in the same direction and by roughly the same factor: the harvested dual sums the shadow price on the upward ceiling alone, while the access parameter caps both directions, and the downward row binds more often, so the dual is half a derivative. The finite-difference curve is nonincreasing on every one of the six, which is the convexity the same test also checks, and every marginal value of access reported in this chapter is the finite difference and never the dual. One further check moved and is reported so that it is not mistaken for a tuned one. The identity that shed reserve cannot exceed draw was held to an absolute tolerance of one millionth of a megawatt on a quantity that reaches 250 MW, and four applied-access runs exceeded it by between 1.0 and 3.2 millionths of a megawatt in exactly one hour each, an order of magnitude inside the solver's own feasibility tolerance. The tolerance is now scale-relative and the worst violation is printed whether the row passes or fails. That is a correction to a check no solver can satisfy, not a relaxation to admit a result.
+
+%------------------------------------------------------------
+\subsubsection{Dispatch in Two Weeks, and the Accumulator's Year}
+\label{4-subsec:4.0.3 dispatch}
+
+\autoref{fig:4.1 dispatch weeks} shows the hourly dispatch of the baseline run, scenario 1 at 2024, across two weeks, 9 to 15 December and 5 to 11 July, each chosen as the week whose seven-source dispatch mix lies closest to its season's mean. The summer week carries two further conditions, both judgements: it had to contain negative-price hours, because the fleet's response to them is a behaviour this chapter discusses and a summer week without any would misrepresent the season, and its negative axis was capped at forty per cent of the panel height for legibility, which excluded the week of 27 July, at 64 per cent below zero. In the winter week the electric boilers average 100.5 MW of heat, the day-ahead price runs from 3 to 6{,}238 NOK/MWh, the accumulator charges 3{,}250 MWh across the week and discharges into the price spikes, and nothing is dumped. The merit order is visible doing its job: every price spike collapses the boiler block and the peak-fuel bands take over, with the pellet tranche pinned at its 56 MW cap almost continuously and the bio-oil tranche at 1{,}330 NOK/MWh$_{th}$ acting as the true swing fuel, which is why the three peak fuels are drawn as separate bands. The summer week is the opposite problem. The incinerator alone nearly covers demand, so there is almost nothing to optimise until 24 consecutive negative-price hours reach $-$228 NOK/MWh; the plant then runs the boilers to 145.3 MW, fills the tank, and still dumps 1{,}186 MWh of heat, because being paid to consume electricity is worth more than the heat is worth storing. The peak boilers never fire all week.
+
+% C4-D1
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{Graphics/4. Results/fig-4-dispatch-weeks.pdf}
+    \caption{Hourly dispatch of the baseline run across a winter week and a summer week of 2024, with the day-ahead price on the right axis. Heat sources stack upward from the waste incinerator; accumulator charging and dump cooling are drawn below zero as heat leaving the network.}
+    \label{fig:4.1 dispatch weeks}
+\end{figure}
+
+\autoref{fig:4.1 accumulator year} follows the store through the whole of 2024, as an hour-of-day map and as the daily mean and range, and its headline is that the store is a daily asset and not a seasonal one. The mean daily swing is 256 MWh, the median 260 and the maximum 495, against a usable volume of 495 MWh, so a typical day moves half the tank, and there is no seasonal trend underneath the daily movement. The rhythm inside the day is a winter rhythm, and that is a measurement on the hourly series rather than something the figure can be read to show: the mean daily swing is 404 MWh in December to February against 96 in June to August, and in winter the tank is fullest at 05:00, at a mean 451 MWh, and emptiest at 20:00, at 145 MWh, which is charging on cheap overnight power and discharging into the evening. The figure carries the seasonal contrast, which is readable, and the two saturations, which are the reason the store's size is swept in \autoref{4-subsec:4.1.5 storage sizing}: 113 days drain to the 55 MWh floor and 77 reach the 550 MWh nameplate. It also carries the summer stagnation, in which 58 days swing under 20 MWh and one run of 13 days sits above 90 per cent full, because with the incinerator alone covering demand there is nothing to arbitrage. That is demand too low to need the tank, and it is a different thing from the 2023 mechanism of \autoref{4-subsec:4.0.2 validation}, which is cheap power and heat load failing to coincide. The floor is nameplate less the declared usable fraction of \autoref{3-subsec:3.4.2 input data provenance}, and it moves with that declaration.
+
+% C4-D2
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Graphics/4. Results/fig-4-accumulator-state.pdf}
+    \caption{The accumulator's state of charge through 2024 in the baseline run. Panel (a) is stored heat by hour of day and day of year; panel (b) is the daily mean with its daily range, against the non-cyclable floor that the declared usable fraction sets.}
+    \label{fig:4.1 accumulator year}
+\end{figure}
+
+%------------------------------------------------------------
+%------------------------------------------------------------
+\subsection{Commercial Results: the Operator's Ledger}
 \label{4-subsec:4.1 DH operator results}
 
+Every figure in this subsection is read off the operator's ledger, and the ledger's perimeter has to be stated before the first level is quoted. A cost level below is the operating cost of dispatch on the model's own perimeter: electricity at spot, grid tariff, electricity tax, fuel and variable operating cost, less reserve revenue. It excludes heat revenue, which is invariant to dispatch, capital cost and financing, and it is not a statement about the firm; the firm-level figures come from the audited accounts. Outside 2024 a level is a counterfactual under held 2024 policy, on the standardisation of \autoref{3-subsec:3.5.2 stack}, and every difference is unaffected by it. The subsection leads with the capability ladder, because every value in it is a step between adjacent rungs or a difference from one of the two references of \autoref{3-subsec:3.5.1 ladder}. It then reports the cost levels and the delivery-year bound, reserve participation and the value of access, and the accumulator's size and payback. The four parts are the two scenario axes, a bound and a sweep, not levels of participation.
 
-
-
-
-\subsubsection{Baseline Operation (No Flexibility Participation)}
+%------------------------------------------------------------
+\subsubsection{The Capability Ladder and the Flexibility Value}
 \label{4-subsec:4.1.1 baseline}
 
+\autoref{fig:4.2 ladder baseline} draws the four rungs of \autoref{tab:3.5.1 ladder} for scenario 1 at 2024, the baseline run. The price-blind rung R0 costs 772.84 MNOK for the year. Dispatching against the hourly price signal takes 75.08 MNOK off that, the accumulator a further 20.59, and reserve participation at today's 29 MW a further 45.20, to the baseline run's 631.97 MNOK: a fall of 140.87 MNOK, or 18 per cent of the price-blind cost, over the whole ladder.
 
+% C4-L1
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Graphics/4. Results/fig-4-capability-ladder.pdf}
+    \caption{The capability ladder of \autoref{tab:3.5.1 ladder} at the baseline run, scenario 1 in 2024. The two end bars are annual net cost levels; the three floating bars are the fall in cost that each capability step produces, and the bracket is the whole fall from R0 to R3.}
+    \label{fig:4.2 ladder baseline}
+\end{figure}
 
+Two of those rungs are objects the chapter quotes separately, and the ladder makes the coincidence exact. The top rung R3 is the baseline run itself, at 631.97 MNOK, and the second rung R1 is its no-flexibility counterfactual, at 697.76 MNOK, identical to the decimal in both files the model writes. The headline flexibility value of 65.79 MNOK per year is therefore the sum of the two upper steps alone, the accumulator and reserve participation, and it excludes the largest capability on the ladder. Price-responsive dispatch is worth 75.08 MNOK, more than the other two combined, and it sits outside the headline because the counterfactual already dispatches on price. The most valuable thing the plant does is invisible in the figure the thesis leads with, and that is a property of the reference rather than a caveat: the counterfactual of \autoref{3-subsec:3.5.1 ladder} is the plant as it actually runs, and the plant actually runs against hourly prices. The reserve step of 45.20 MNOK is reserve at this scenario's 29 MW, so it moves along the access axis where the two rungs below it do not.
 
+\autoref{fig:4.2 ladder cross} stacks the three steps at all six scenarios and all three delivery years, and one caveat has to be read into it before anything else. The 2023 group runs on the binary activation rule, because the fifteen-minute balancing record for NO1 begins on 17 October 2023, and that rule overstates activation duration by a factor of about 1.16 against the fractional rule the 2024 and 2025 groups use, as \autoref{3-subsec:3.5.2 stack} sets out; so the 2023 reserve steps are on a different definition of activation from the other two years' while sharing an axis with them. The seam reaches the reserve step only. The two lower rungs sell no reserve, and their 2023 values stand on the same footing as the other years'. \autoref{tab:4.2 ladder steps} gives the steps.
 
-\subsubsection{Optimised Operation - Spot Arbitrage Only}
+% C4-L2
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{Graphics/4. Results/fig-4-ladder-cross.pdf}
+    \caption{The three capability steps stacked at every scenario and every delivery year, grouped by year. Bar height is the whole fall from R0 to R3. The 2023 reserve steps rest on the binary activation rule; the two lower steps are unaffected by it.}
+    \label{fig:4.2 ladder cross}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{The capability steps by tariff structure and delivery year, in MNOK per year. The two lower steps do not depend on access, so each is one number per tariff structure and year; the reserve step is given at all three access levels. 2023 reserve steps rest on the binary activation rule.}
+\small
+\begin{tabular}{l l r r r r r}
+\toprule
+\textbf{Year} & \textbf{Tariff structure} & \textbf{R0$\rightarrow$R1} & \textbf{R1$\rightarrow$R2} & \multicolumn{3}{c}{\textbf{R2$\rightarrow$R3}} \\
+ & & \textbf{price response} & \textbf{accumulator} & \textbf{today} & \textbf{partial} & \textbf{applied} \\
+\midrule
+2023 & Interruptible & 45.79 & 22.45 & 22.56 & 49.92 & 58.42 \\
+2023 & Standard & 40.13 & 14.85 & 17.04 & 37.21 & 41.77 \\
+\addlinespace
+2024 & Interruptible & 75.08 & 20.59 & 45.20 & 127.89 & 177.16 \\
+2024 & Standard & 47.87 & 14.93 & 37.53 & 100.16 & 130.27 \\
+\addlinespace
+2025 & Interruptible & 70.14 & 19.70 & 57.76 & 178.43 & 268.36 \\
+2025 & Standard & 34.46 & 15.19 & 50.05 & 148.26 & 215.27 \\
+\bottomrule
+\end{tabular}
+\label{tab:4.2 ladder steps}
+\end{table}
+
+Three things are visible in the figure and in no table of single runs. First, the two lower steps are invariant to access and not to tariff structure: price-responsive dispatch and the accumulator are worth the same at 29, 100 and 200 MW, because neither rung sells reserve, and both differ between the two tariff structures. Second, the standard tariff suppresses price-responsive dispatch rather than merely taxing it. The first step is worth 75.08 MNOK on the interruptible tariff and 47.87 on the standard one at 2024, 70.14 against 34.46 at 2025 and 45.79 against 40.13 at 2023, between 12 and 51 per cent less, because chasing a cheap hour raises the month's peak and the peak is what the standard schedule bills. \autoref{2-subsec:2.3.2 market barriers} argues that the capacity charge taxes flexibility; the ladder measures it changing the dispatch. Third, the accumulator is worth less under the standard tariff, not more: 14.85, 14.93 and 15.19 MNOK across the three years against 22.45, 20.59 and 19.70 on the interruptible tariff, a ratio of 0.66 to 0.77. That is the measurement \autoref{fig:2.3.2 effektledd timeline} predicts and the thesis had not previously made. The monthly capacity charge suppresses the charging event that would fill the tank, so the tank does less work. The accumulator step is otherwise the steadiest number on the ladder, spanning 14.85 to 22.45 MNOK across every tariff structure and year where the reserve step spans 17.04 to 268.36.
+
+\autoref{fig:4.2 ladder paired} regroups the same steps by scenario with 2024 and 2025 paired inside each, and drops 2023, because a paired comparison is exactly the reading the activation-rule seam would corrupt. It shows what \autoref{fig:4.2 ladder cross} cannot. The two lower rungs are stable across the two years on the interruptible tariff, with price-responsive dispatch at 75.08 and 70.14 MNOK and the accumulator at 20.59 and 19.70, while the reserve step grows from 2024 to 2025 at every one of the six scenarios, from 45 to 58 MNOK at scenario 1 and from 177 to 268 at scenario 3. On the standard tariff the lower rungs are not stable: price-responsive dispatch falls from 47.87 to 34.46 MNOK, a 28 per cent drop, so the suppression the standard tariff exerts is itself year-dependent.
+
+% C4-L2b
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{Graphics/4. Results/fig-4-ladder-paired.pdf}
+    \caption{The same three steps grouped by scenario, with the 2024 and 2025 delivery years paired inside each group. 2023 is omitted because its reserve step rests on a different activation rule.}
+    \label{fig:4.2 ladder paired}
+\end{figure}
+
+Every flexibility value in \autoref{tab:4.2 core results} is measured against the counterfactual on the run's own tariff structure, as \autoref{3-subsec:3.5.2 stack} requires. Measured against the interruptible counterfactual instead, the 2024 standard-tariff run at today's access would read $-$10.90 MNOK, a composite of tariff difference and flexibility value that says flexibility destroys value; against its own it reads 52.46. The table carries the eighteen runs. The flexibility value rises with access in every year and on both tariff structures, from 65.79 to 197.75 MNOK across the 2024 interruptible-tariff runs and from 52.46 to 145.20 across the standard-tariff ones, and it is lower on the standard tariff at every access level in every year. It is also lowest in 2023 at every scenario, 45.01 MNOK at the baseline against 65.79 and 77.46 in the two later years, for the reason \autoref{4-subsec:4.0.2 validation} gives: with cheap power and heat load failing to coincide there was less to arbitrage.
+
+\begin{table}[h]
+\centering
+\caption{The eighteen runs. Net cost is tariff-complete, including the interruptible tariff's subscribed-capacity charge of about 31 MNOK per year, and outside 2024 it is a counterfactual under the held 2024 policy. Levelised cost is tariff-complete net cost over delivered heat. The flexibility value is the saving against the no-flexibility counterfactual on the run's own tariff structure and is unaffected by the held policy. Reserve revenue is upward capacity plus upward activation revenue; the down-regulation leg is inside net cost. Scenario numbers follow \autoref{fig:3.5.2 scenario stack}.}
+\footnotesize
+\begin{tabular}{c l l c r r r r r r}
+\toprule
+\textbf{Scen.} & \textbf{Tariff} & \textbf{Access, MW} & \textbf{Year} & \textbf{Net cost} & \textbf{Levelised} & \textbf{Flexibility} & \textbf{Boiler} & \textbf{Reserve} & \textbf{Peak} \\
+ & & & & \textbf{MNOK} & \textbf{NOK/MWh} & \textbf{value, MNOK} & \textbf{share, \%} & \textbf{rev., MNOK} & \textbf{draw, MW} \\
+\midrule
+1 & Interruptible & today, 29 & 2023 & 817.6 & 410 & 45.01 & 9.1 & 32.6 & 250 \\
+2 & Interruptible & partial, 100 & 2023 & 790.2 & 396 & 72.37 & 9.6 & 72.1 & 250 \\
+3 & Interruptible & applied, 200 & 2023 & 781.7 & 392 & 80.87 & 9.8 & 88.4 & 250 \\
+4 & Standard & today, 29 & 2023 & 833.5 & 417 & 31.89 & 3.5 & 30.1 & 127 \\
+5 & Standard & partial, 100 & 2023 & 813.3 & 407 & 52.07 & 3.9 & 66.4 & 126 \\
+6 & Standard & applied, 200 & 2023 & 808.8 & 405 & 56.62 & 4.4 & 80.3 & 150 \\
+\addlinespace
+1 & Interruptible & today, 29 & 2024 & 663.0 & 345 & 65.79 & 20.6 & 50.9 & 250 \\
+2 & Interruptible & partial, 100 & 2024 & 580.3 & 302 & 148.48 & 23.7 & 138.2 & 250 \\
+3 & Interruptible & applied, 200 & 2024 & 531.0 & 276 & 197.75 & 24.7 & 189.3 & 250 \\
+4 & Standard & today, 29 & 2024 & 708.7 & 369 & 52.46 & 14.7 & 50.9 & 221 \\
+5 & Standard & partial, 100 & 2024 & 646.0 & 336 & 115.08 & 19.1 & 135.1 & 215 \\
+6 & Standard & applied, 200 & 2024 & 615.9 & 320 & 145.20 & 21.1 & 184.4 & 217 \\
+\addlinespace
+1 & Interruptible & today, 29 & 2025 & 560.2 & 314 & 77.46 & 14.3 & 42.0 & 250 \\
+2 & Interruptible & partial, 100 & 2025 & 439.5 & 246 & 198.14 & 17.6 & 113.9 & 250 \\
+3 & Interruptible & applied, 200 & 2025 & 349.6 & 196 & 288.06 & 20.0 & 160.4 & 250 \\
+4 & Standard & today, 29 & 2025 & 583.1 & 326 & 65.25 & 9.3 & 40.3 & 197 \\
+5 & Standard & partial, 100 & 2025 & 484.9 & 271 & 163.45 & 13.1 & 107.2 & 190 \\
+6 & Standard & applied, 200 & 2025 & 417.9 & 234 & 230.46 & 16.4 & 149.1 & 217 \\
+\bottomrule
+\end{tabular}
+\label{tab:4.2 core results}
+\end{table}
+
+%------------------------------------------------------------
+\subsubsection{Cost Levels, Levelised Cost and the Delivery-Year Bound}
 \label{4-subsec:4.1.2 spot arbitrage}
 
+\autoref{fig:4.2 levelised cost} draws the levelised cost of heat for the eighteen runs on a tariff-complete basis, with each tariff structure's own no-flexibility counterfactual as a dashed rule. The basis matters, and it is the one \autoref{3-subsec:3.5.2 stack} defines for the tariff comparison: the interruptible tariff's subscribed-capacity charge, fixed in subscribed megawatts and correctly left out of the optimisation's objective, is added back before the two tariff structures are stood side by side, because the standard tariff pays no such charge. The interruptible bars therefore sit 15.5 to 17.3 NOK/MWh above the levelised cost the model's own output files carry, which is computed on the objective alone, and the standard bars do not move; a reader checking the drawing against the run artifacts will find that difference, and it is deliberate. The figure supports one reading and forbids another. The reading is the vertical distance from a bar to its own tariff structure's rule, which is the flexibility value per megawatt-hour of heat delivered: on the interruptible tariff at 2024 it runs from 34 NOK/MWh at today's access to 103 at applied access, and on the standard tariff from 27 to 76, the ladder's finding in per-unit form. The forbidden reading is the distance from an interruptible bar to the standard rule, because the two rules are two counterfactuals, 1.4, 16.8 and 6.0 NOK/MWh apart in 2023, 2024 and 2025. Across the access axis the interruptible bars fall from 410 to 392 NOK/MWh in 2023, a 4.4 per cent fall, and from 314 to 196 in 2025, a 38 per cent fall. Access buys almost nothing in 2023 because there was almost nothing to arbitrage.
 
+% C4-C1
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{Graphics/4. Results/fig-4-levelised-cost.pdf}
+    \caption{Levelised cost of heat per run, tariff-complete, grouped by delivery year, with each tariff structure's own no-flexibility counterfactual as a dashed rule. Levels outside 2024 are counterfactual under the held 2024 policy; the distance from a bar to its own rule is not.}
+    \label{fig:4.2 levelised cost}
+\end{figure}
 
+\autoref{fig:4.2 cost ledger} decomposes the same levelised cost into its ledger lines per megawatt-hour of heat delivered. Fuel and variable dispatch cost is the largest line in every run, because the waste incinerator's levy-driven marginal cost of \autoref{3-subsec:3.4.3 assumptions} sits inside it, and it moves little across the scenario axes. What moves is electricity purchase, which rises with access as the boilers draw more to back reserve, and upward reserve revenue, which rises faster, from 26 NOK/MWh at the 2024 baseline to 99 at applied access. The tariff-complete net cost marked on each bar includes the down-regulation leg of reserve participation, which the bars do not draw separately.
 
+% C4-C2
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{Graphics/4. Results/fig-4-cost-ledger.pdf}
+    \caption{Cost and upward reserve revenue per megawatt-hour of heat delivered, by ledger line, for every run. Costs stack above zero and reserve revenue below it; the mark is the tariff-complete net cost, which also contains the down-regulation leg.}
+    \label{fig:4.2 cost ledger}
+\end{figure}
 
-\subsubsection{Optimised Operation - Including Reserve Market Participation}
+\autoref{fig:4.2 year bound} extends the baseline scenario to the five demand years on disk, the bound of \autoref{3-subsec:3.5.2 stack}, and all five are reported with their caveats rather than the three delivery years alone. Two caveats attach and they are separate. Every bar in the top panel is a counterfactual under the held 2024 policy: all five years are billed the 2024 carbon levy, electricity tax and tariff schedules, so the range of the flexibility value across the axis, from 45.0 MNOK in 2023 to 144.9 in 2021, a factor of 3.22, is a range of weather and prices with the statute held constant, and not a history of what the operator faced. And three of the five bars, not two, rest on the binary activation rule: 2021 and 2022 have no fifteen-minute balancing record at all and 2023 has one for a fifth of the year, so the dashed rule in the figure marks where the fifteen-minute data begin, one year before the rule changes, and the reserve revenue inside the 2021, 2022 and 2023 values is not on the same definition as the two later years'. With both attached, 2021 is the largest flexibility value anywhere in the run set, roughly double 2024's 65.8 MNOK and above 2025's 77.5, on an ordinary demand year of 1.94 TWh at a mean price of 758 NOK/MWh. It is reported here as a bound and it is not a central case.
+
+% C4-Y1
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Graphics/4. Results/fig-4-year-axis.pdf}
+    \caption{The baseline scenario solved on all five demand years: flexibility value, mean day-ahead price and electric-boiler heat. The dashed rule separates the two years outside the headline grid from the three delivery years; every value bar is a counterfactual under the held 2024 policy, and the three left-most rest on the binary activation rule.}
+    \label{fig:4.2 year bound}
+\end{figure}
+
+Two readings that a four-year version of this bound once supported do not survive five years, and both are stated so that they are not carried forward. The flexibility value does not track the price level: its rank correlation with the mean day-ahead price across the five years is $-0.5$. Electric-boiler heat does, at $-0.9$, and 2022 shows both at once. In the crisis year the model delivers 40 GWh of boiler heat, a tenth of 2021's, and still returns 51.2 MNOK of flexibility value, above 2023's, so the value per gigawatt-hour of boiler heat in 2022 is three times 2021's. The lesson of the middle panel is the one \autoref{4-subsec:4.0.2 validation} draws: the price level sets how much boiler runs, and the coincidence of cheap hours with heat load sets what the flexibility is worth.
+
+%------------------------------------------------------------
+\subsubsection{Reserve Participation and the Value of Access}
 \label{4-subsec:4.1.3 reserve market participation}
 
+Reserve participation is the step that scales, and \autoref{tab:4.2 core results} carries its revenue at every run: upward capacity payments plus upward activation energy, 50.9 MNOK at the 2024 baseline, 138.2 at partial and 189.3 at applied access, with the down-regulation leg inside net cost rather than in the column. The operator entered the manual reserve market in 2025 (operator interview, Hafslund Celsio, 25 June 2026), so the 2023 and 2024 figures are what today's 29 MW would have earned had it been offered, as \autoref{3-subsec:3.4.3 assumptions} states, and no reserve figure from those years reconciles against the operator's accounts.
 
+\autoref{fig:4.2 reserve benchmark} sets the modelled revenue per megawatt of eligible capacity against the one published estimate of the same mechanism, the anchor report's case exercise on the operator's own boilers presented in \autoref{3-subsec:3.6 socio-economic valuation}: NOK 330{,}000 per MW per year in FCR-N capacity over an October to April season \cite{Thema_fjernvarme_2024}. The comparison is legitimate where a comparison with the conversion headline would not be, because both sides price the same asset selling into the system operator's reserve markets in the same unit, and it is legitimate on one segment only. The published figure is a capacity payment, so the like-for-like comparison is with the modelled capacity payment alone: 0.34 MNOK per MW per year at today's access in 2023, 0.92 in 2024 and 0.64 in 2025, or 1.03, 2.80 and 1.95 times the benchmark. With activation energy added, the modelled value is 1.12, 1.76 and 1.45 MNOK per MW per year. The two are never summed; the benchmark is context, and the registry the socio-economic arithmetic reads refuses it as an addend. The best sentence the comparison supports concerns volume. The published figure comes from a single-boiler case exercise and states no participating volume, so it is volume-independent by construction, while the modelled value falls as eligible capacity rises, to 0.50 MNOK per MW of capacity payment at 200 MW in 2024. The model converges on the published flat assumption from above: the published figure is a fair approximation at large volume and understates the value at the volume the operator actually holds. Three caveats travel with the comparison. The products differ, FCR-N against manual reserve. The published estimate counts capacity only. And it assumes delivery across October to April, months the same report places 30 to 40 per cent below the annual average for capacity prices, so it is conservative on its own terms, which is what makes the comparison fair rather than flattering. The one place the modelled capacity payment falls below the benchmark is 2023 at 100 and 200 MW, at 0.71 and 0.44 times, for the reason every 2023 figure carries. The near-exact match at today's access in 2023, at 1.03 times, is a coincidence at one point on one product between two sources that share no method, and it is noted as one.
 
+% C4-B1
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Graphics/4. Results/fig-4-reserve-benchmark.pdf}
+    \caption{Modelled reserve revenue per megawatt of eligible capacity, split into capacity payment and activation energy, at the three access levels of the interruptible tariff in each delivery year, against the anchor report's FCR-N capacity estimate \cite{Thema_fjernvarme_2024}. Only the capacity segment is like for like with the benchmark, and the two are never summed.}
+    \label{fig:4.2 reserve benchmark}
+\end{figure}
 
+\autoref{fig:4.2 access curve} sweeps the access constraint continuously for scenario 1 at 2024, from below today's allocation to the licensed fleet, and reads the marginal value of access off it as a finite difference, never as the shadow price, for the reason \autoref{4-subsec:4.0.2 validation} gives. At the 29 MW held today one additional megawatt of reserve access is worth 1.49 MNOK per year. The curve is strongly concave, at 1.49 MNOK per MW at 29 MW, 0.99 at 100, 0.27 at 200, 0.08 at 250 and exactly zero above it, so the first megawatts are worth roughly twenty times the last. It saturates at the concurrent dispatch bound: annual net cost is 496.06 MNOK at 250 MW and at 292.6 MW alike, because a fleet that cannot draw more than 250 MW cannot back more reserve however much it is permitted to sell. Above 250 MW the barrier stops being regulatory and becomes the thermal one of \autoref{4-subsec:4.0.1 envelope in use}, and the 250 is the operator's own rule of thumb, which varies with network conditions and is not to be read as a precise figure (operator communication, Hafslund Celsio, 28 August 2026). The whole of today's regulatory band sits on the flat top of the curve. The band runs from 22 MW, the practical ceiling for a single large regulating object under the reservation for flexibility groups that holds until the end of 2026, through the 29 MW the operator holds, to the 33 MW published ceiling for the Oslo and Akershus capacity-area group \cite{statnett_innforing_2026}, and the marginal value across it is 1.49 against 1.46 MNOK per MW. The practical ceiling therefore sits below what the operator already has, and the zone the current regime argues over changes almost nothing. The value is in the 100 to 200 MW range that no allocation is offering.
 
-\subsubsection{Sensitivity Analysis}
-\label{4-subsec:4.1.4 sensitivity analysis}
+% C4-K1
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/4. Results/fig-4-access-curve.pdf}
+    \caption{Annual net cost and the marginal value of reserve access against reserve-eligible capacity, for the interruptible tariff at 2024, with the regulatory band, today's holding and the concurrent dispatch bound marked. The marginal value is the finite difference between adjacent sweep points.}
+    \label{fig:4.2 access curve}
+\end{figure}
 
+The access bracket of \autoref{3-subsec:3.7 gap and attribution} is the same result read at the three access levels the scenarios run. Widening access from today's 29 MW to the 200 MW applied for lowers the 2024 baseline run's annual net cost by 131.96 MNOK and raises upward reserve revenue by 138.42 MNOK, from 50.92 to 189.34; the two numbers differ because earning the second costs dispatch. Both are the operator's own ledger, and both are reported in \autoref{4-subsec:4.3 valuation gap} as what they are, a transfer with an enabler. Two caveats attach at the top of the axis and are repeated wherever an applied-access figure is quoted. The first is price taking, extended to the reserve market as assumption A5 of \autoref{3-subsec:3.4.3 assumptions} declares: at applied access in 2025 the model's own activated upward energy is 1.20 times the entire NO1 zone's activated volume over the same year, and the operator states that entering at that volume would push reserve prices down (operator interview, Hafslund Celsio, 25 June 2026). No haircut is applied, because it would need a reserve supply curve the model does not hold, and the applied-access figures are upper bounds. The second is the market-depth constraint, which limits committed capacity to the volume the zone contracted in each hour, and whose removal is the price-taking assumption in its pure form. Switching it off is worth 2.05 MNOK at today's access in 2024, 23.31 at partial and 67.69 at applied access, and it raises the access bracket from 138.42 to 256.42 MNOK. The cap is most of the shape of the access result rather than a level shift on it, and an access value quoted without saying whether the zone could absorb it would overstate it by 85 per cent. \autoref{4-subsec:4.1.4 sensitivity analysis} carries the row.
 
+%------------------------------------------------------------
+\subsubsection{The Accumulator: Size and Payback}
+\label{4-subsec:4.1.5 storage sizing}
 
+\autoref{fig:4.2 storage sizing} sweeps the accumulator's usable energy across ten sizes from zero to three times the installed store, at scenario 1 in 2024, re-solving the whole problem at each. With no store the flexibility value is 31.33 MNOK; the first 124 MWh of usable volume add 23.28 MNOK, the installed 495 MWh reach 65.79, and tripling the tank to 1{,}500 MWh adds a further 10.03, to 75.82. The marginal value of storage falls from 188{,}000 NOK per usable MWh per year across the first step to 21{,}400 across the step that reaches the installed tank and 6{,}600 across the last. The store's value is front-loaded, and the installed tank sits on the flat part of its own curve. That is consistent with what \autoref{4-subsec:4.0.3 dispatch} shows of how it is used: the store is a daily asset that moves half its volume on a typical day and saturates at one end or the other on half the days of the year, so the binding thing is its size, and its size is already past the steep part of the return.
 
+% C4-S1
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/4. Results/fig-4-storage-sizing.pdf}
+    \caption{The flexibility value of the baseline scenario at 2024 against the accumulator's usable energy, and the marginal value of each expansion step, with the installed tank marked. Each point is a full re-solve.}
+    \label{fig:4.2 storage sizing}
+\end{figure}
 
-\subsection{Societal Valuation: Triangulated Estimate}
+Whether a larger tank would be worth building is a screening question rather than an investment appraisal, and the screening comes out one way at every size. Priced at the Danish Energy Agency's catalogue figures for large steel hot-water tanks, a specific investment of 2.211, 3.036 and 8.177 million EUR per GWh at the lower, control and upper estimates, converted at the model's 2024 mean rate of 11.63 NOK per EUR and divided by the 0.90 usable fraction, one usable megawatt-hour of storage costs 28{,}600, 39{,}200 or 105{,}700 NOK to build \cite{danish_energy_agency_energy_2025}. \autoref{tab:4.2 storage payback} sets those against the marginal dispatch value of each expansion step. Every step on the swept range pays back in 0.2 to 6.0 years at the control cost, and in under 17 years even at the upper cost on the last and least valuable step, against a technical life of 30 to 50 years from the same source. Two clauses travel with the table, or it reads as an appraisal it is not. The payback is simple and undiscounted, on the rule of \autoref{3-subsec:3.4.3 assumptions} that no discount rate enters the arithmetic, and it prices capital cost alone, with the catalogue's fixed operating cost not netted against the value. And it prices the model's own dispatch value alone, with no reserve-market growth, no replacement and no decommissioning. On that basis the tank's capital cost is never the binding constraint on the value the dispatch can extract from it. Nothing on the range comes within a factor of two of the technical life, and reaching a thirty-year payback would take a store of roughly 5{,}000 to 10{,}000 usable MWh, which is not a size this plant would build.
+
+\begin{table}[h]
+\centering
+\caption{Simple undiscounted payback of each accumulator expansion step at the 2024 baseline scenario, on the model's dispatch value alone, at the Danish Energy Agency's lower, control and upper specific investment for large steel hot-water tanks \cite{danish_energy_agency_energy_2025}. The installed tank is 495 usable MWh; the catalogue's technical life is 30 to 50 years.}
+\small
+\begin{tabular}{l r r r r}
+\toprule
+\textbf{Step, usable MWh} & \textbf{Marginal value} & \multicolumn{3}{c}{\textbf{Payback, years}} \\
+ & \textbf{kNOK/MWh/yr} & \textbf{lower} & \textbf{control} & \textbf{upper} \\
+\midrule
+0 to 124 & 188.1 & 0.2 & 0.2 & 0.6 \\
+124 to 248 & 40.5 & 0.7 & 1.0 & 2.6 \\
+248 to 371 & 28.5 & 1.0 & 1.4 & 3.7 \\
+371 to 495 & 21.4 & 1.3 & 1.8 & 4.9 \\
+495 to 619 & 16.6 & 1.7 & 2.4 & 6.4 \\
+619 to 750 & 13.6 & 2.1 & 2.9 & 7.8 \\
+750 to 1{,}000 & 10.3 & 2.8 & 3.8 & 10.3 \\
+1{,}000 to 1{,}250 & 7.9 & 3.6 & 5.0 & 13.4 \\
+1{,}250 to 1{,}500 & 6.6 & 4.3 & 6.0 & 16.1 \\
+\bottomrule
+\end{tabular}
+\label{tab:4.2 storage payback}
+\end{table}
+
+\begin{keypoint}
+In the baseline run flexibility is worth 65.79 MNOK per year to the operator against a plant that already dispatches on price, and 140.87 against one that does not; price-responsive dispatch is the largest capability on the ladder and sits outside the headline. Reserve access is the step that scales, to 197.75 MNOK at the applied-for 200 MW, an upper bound under price taking, and its marginal value at today's 29 MW is 1.49 MNOK per MW per year on a curve that is flat across the regulatory band and saturates at the 250 MW network bound. The standard tariff suppresses price-responsive dispatch by 12 to 51 per cent and makes the accumulator worth less. Cost levels are dispatch-perimeter operating costs, counterfactual outside 2024, and are never the basis of a claim.
+\end{keypoint}
+
+%------------------------------------------------------------
+%------------------------------------------------------------
+\subsection{The Socio-Economic Valuation}
 \label{4-subsec:4.2 triangulated social value}
 
+The socio-economic side prices the physical quantities the runs above produce at the published unit values of \autoref{3-subsec:3.6 socio-economic valuation}, channel by channel, and it prices nothing else. The anchor report's headline of NOK 1 to 1.6 billion per year is the value of converting electric heating to district heating, and it is not a figure this subsection produces, approaches or bounds against \cite{Thema_fjernvarme_2024}: it is carried as context, outside every sum, and the one category error the valuation is built to prevent is reading it as the value of flexibility. What follows reports the two priced channels at every interruptible-tariff run, the three channels that carry no number, the mechanism that decides the sign of the grid channel, and how the two perimeters diverge as the store grows. The un-captured externality the priced channels sum to is the gap of \autoref{3-subsec:3.7 gap and attribution}, and its division is reported in \autoref{4-subsec:4.3 valuation gap}.
 
+%------------------------------------------------------------
+\subsubsection{The Priced Channels and Their Values}
+\label{4-subsec:4.2.1 channels}
 
+Of the six channels of \autoref{tab:3.6 channels}, two carry a krone value in this analysis. C1, freed grid capacity, prices the mean reduction in the operator's metered grid draw across the 88 tightest hours of the year ranked by heat demand, at the anchor report's band of 0.7 to 1.6 MNOK per MW per year with a central value of 1.0 \cite{Thema_fjernvarme_2024}, and the mask that produced it is stated beside every figure below because the channel's sign turns on it. C3, avoided fossil peaking, prices the change in the LNG tranche's own dispatch against the price-responsive reference R1, at the effort-sharing carbon path of 1{,}639 NOK per tonne less the 1{,}000 NOK per tonne levy the operator already pays on that fuel, on the tranche's 0.2239 tonnes per MWh of heat \cite{finansdepartementet_karbonprisbaner_2025}. C2, the operator's reserve revenue, is priced and sits inside the operator's captured value: it is the reserve column of \autoref{tab:4.2 core results}, and it is added to nothing here. \autoref{tab:4.3 channels} gives both priced channels at the nine interruptible-tariff runs. The standard-tariff runs price the interruptible arrangement and are not gap rows, on the rule of \autoref{3-subsec:3.7 gap and attribution}.
 
+\begin{table}[h]
+\centering
+\caption{The two priced socio-economic channels at the nine interruptible-tariff runs, against the price-responsive reference. Freed grid capacity is the mean reduction in metered grid draw across the 88 tightest hours of the year ranked by heat demand, priced at 0.7, 1.0 and 1.6 MNOK per MW per year; a negative value is draw added in those hours. Avoided fossil peaking is the reduction in the LNG tranche's dispatch, priced net of the levy on the effort-sharing carbon path. The last column is the un-captured externality, C1 plus C3.}
+\small
+\begin{tabular}{c c r l r r l}
+\toprule
+\textbf{Scen.} & \textbf{Year} & \textbf{Relief, MW} & \textbf{C1, MNOK} & \textbf{LNG displaced,} & \textbf{C3, MNOK} & \textbf{C1 + C3, MNOK} \\
+ & & & \textbf{low / mid / high} & \textbf{MWh$_{th}$} & & \textbf{low / mid / high} \\
+\midrule
+1 & 2023 & $-$8.34 & $-$13.34 / $-$8.34 / $-$5.84 & 5{,}539 & 0.79 & $-$12.55 / $-$7.55 / $-$5.05 \\
+2 & 2023 & $-$22.86 & $-$36.58 / $-$22.86 / $-$16.00 & 6{,}406 & 0.92 & $-$35.66 / $-$21.94 / $-$15.09 \\
+3 & 2023 & $-$29.69 & $-$47.50 / $-$29.69 / $-$20.78 & 8{,}069 & 1.15 & $-$46.35 / $-$28.53 / $-$19.63 \\
+\addlinespace
+1 & 2024 & 6.15 & 4.31 / 6.15 / 9.85 & 12{,}499 & 1.79 & 6.10 / 7.94 / 11.64 \\
+2 & 2024 & 9.27 & 6.49 / 9.27 / 14.84 & 17{,}021 & 2.44 & 8.93 / 11.71 / 17.27 \\
+3 & 2024 & 9.27 & 6.49 / 9.27 / 14.84 & 18{,}187 & 2.60 & 9.09 / 11.88 / 17.44 \\
+\addlinespace
+1 & 2025 & 11.31 & 7.92 / 11.31 / 18.10 & 13{,}783 & 1.97 & 9.89 / 13.29 / 20.07 \\
+2 & 2025 & 21.99 & 15.39 / 21.99 / 35.18 & 25{,}559 & 3.66 & 19.05 / 25.65 / 38.84 \\
+3 & 2025 & 39.36 & 27.55 / 39.36 / 62.97 & 31{,}468 & 4.50 & 32.05 / 43.86 / 67.48 \\
+\bottomrule
+\end{tabular}
+\label{tab:4.3 channels}
+\end{table}
+
+C3 is small at every run, between 0.79 and 4.50 MNOK per year, and it is small on a sourced answer rather than a missing one. Three of the four peak fuels are biogenic, the pellet tranche is first in the merit order, and the fossil LNG tranche is the marginal displaced fuel: its share of the peak heat that flexibility displaces is a model output, and it comes out between 0.33 and 0.47 across the nine runs. The channel is therefore reported as small and bounded by the LNG share of a predominantly biogenic peak fleet, never as zero, and its bound is swept in \autoref{4-subsec:4.1.4 sensitivity analysis}. Its sign against the second reference is the other way in two years of three, as \autoref{3-subsec:3.5.1 ladder} anticipated, and both are reported with the sign. Against R1 the flexible plant burns less gas than the plant as it runs today in every year: 5{,}539, 12{,}499 and 13{,}783 MWh of LNG heat less at the baseline in 2023, 2024 and 2025. Against the price-blind R0 the whole ladder burns more in 2024 and 2025, by 52{,}062 and 94{,}820 MWh, because the first step substitutes pellets and gas for electricity in expensive hours, and the channel reads $-$7.45 and $-$13.57 MNOK. In 2023, whose mean price already favours gas over electricity at the flat R0 price, the ladder burns 48{,}411 MWh less and the channel reads $+$6.93 MNOK. The R0 direction is a decomposition observation against a reference that is not a policy option, and the gap row is C3 against R1.
+
+C1 is the channel that carries the gap's sign, and its value depends on which hours count as the coincident peak. On the demand-ranked one per cent mask the relief is positive in 2024 and 2025 at every access level, from 6.15 MW at the 2024 baseline to 39.36 MW at applied access in 2025, and negative at every access level in 2023, from $-$8.34 to $-$29.69 MW: in the tightest hours of that year the flexible fleet drew more power than the plant would have drawn without flexibility. Swept across both selectors and five widths at all nine runs, ninety cells in all, the channel is meaningfully positive in six, all of them the demand-ranked mask at one or two per cent of hours in 2024 and 2025. At demand-ranked five per cent it is within rounding of zero, at ten and twenty per cent it is negative in every run of every year, and under the price-ranked mask it is negative almost everywhere. The narrow demand-ranked mask is the only definition under which the flexible fleet looks grid-relieving, and it is narrow precisely because it selects the coldest hours, where the boilers run regardless. \autoref{4-subsec:4.2.2 reserve and relief} gives the mechanism and \autoref{4-subsec:4.1.4 sensitivity analysis} the sweep; the consequence is stated here once, and holds throughout: no C1 figure, and no total containing one, is quoted in this chapter without the mask that produced it.
+
+Three channels carry no number, and the priced total is a floor for that reason. Lower system prices in scarce hours, C4, is a transfer to electricity consumers for which no unit value exists at the dispatch scale of one operator, and the model is a price taker by construction, so its own dispatch cannot move the spot price it faces; the missing willingness-to-pay curve is this channel, and its absence is a declared scope choice. Faster grid connection for queued load, C5, is unpriced because one megawatt of freed headroom is either permanently avoided reinforcement or capacity released to a new load and cannot be both, and C1 already prices it once. Freed hydropower and reservoir value, C6, is the mechanism of \cite{askeland_balancing_2019} and carries no krone value by the scope guardrail of \autoref{1-subsec:1.4 scope and limitations}. All three are positive by construction; none of them could lower the total. The socio-economic total this chapter reports is therefore a lower bound on the two channels it prices, and no sentence below claims more than that.
+
+%------------------------------------------------------------
+\subsubsection{Reserve Commitment and the Coincident Peak}
+\label{4-subsec:4.2.2 reserve and relief}
+
+\autoref{fig:4.3 reserve peak} is the figure the sign of C1 turns on. Its left panel splits the change in mean grid draw across the 88 scarcest hours, ranked by heat demand, into the hours that carry a reserve commitment and those that do not, at the three access levels and three years of the interruptible tariff; the split is reported and never netted, because the two are opposite mechanisms and their mean describes neither, as \autoref{3-subsec:3.6 socio-economic valuation} sets out. Its right panel is why the sign turns over: the share of those hours in which the boiler sits exactly on the floor that backing its commitment requires. The finding is a policy result rather than a modelling detail. Selling upward reserve from an electric boiler relieves the coincident peak only when the boiler would have been running anyway. The backing constraint of the formulation, \autoref{eq:3.4.1 backed}, requires committed reserve to sit under live boiler draw, and the no-flexibility counterfactual carries no such obligation; so in an hour where a cost-minimiser would keep the boilers off, the commitment is what switches them on, in exactly the hours when power is scarcest. At today's access the committed hours relieve the peak by 7.37 MW in 2024 and 13.75 MW in 2025 and load it by 10.95 MW in 2023, across the 67 committed hours of each year, while the uncommitted hours are flat at zero in 2023, within 2.3 MW of zero in 2024, and between $-$5.8 and $+$9.2 MW across the access levels of 2025. Access amplifies whichever sign obtains, because a larger commitment is a larger floor: 2023 goes from $-$10.95 to $-$30.02 and $-$38.99 MW across the axis and 2025 from $+$13.75 to $+$24.41 and $+$46.82.
+
+% C4-R1
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{Graphics/4. Results/fig-4-reserve-peak.pdf}
+    \caption{Reserve commitment and the coincident peak, on the interruptible tariff. Panel (a): the change in mean grid draw across the 88 tightest hours of the year ranked by heat demand, split into hours carrying a reserve commitment and hours without one, against reserve access, by delivery year; positive is relief. Panel (b): the share of those hours in which the boiler sits on the floor that backing its commitment requires.}
+    \label{fig:4.3 reserve peak}
+\end{figure}
+
+Why 2023 differs is measured in the right panel and in the counterfactual's own dispatch. The mean day-ahead price in the 88 scarcest hours was 1{,}739 NOK/MWh in 2023 against 1{,}506 in 2024 and 1{,}031 in 2025, so a cost-minimising plant kept the boilers nearly off: the 2023 counterfactual runs 34.3 MW of boiler heat in those hours against 157.3 and 142.2 in the two later years. Backing today's 29 MW commitment needs about 22 MW of boiler heat, far above what the 2023 counterfactual was running and far below what the 2024 and 2025 counterfactuals were, so the backing floor binds in 59 per cent of 2023's scarce hours and in 10 and 22 per cent of the other two years'. Where the floor is slack the commitment adds no draw and the activation shed is pure relief; where it binds, the commitment adds draw. The whole of the 2023 result is the 19.5 MW of extra scheduled draw the backing requirement creates, and it is the same fact as the 2023 validation miss of \autoref{4-subsec:4.0.2 validation} seen from the other side: the model runs far less boiler in the coincident peak than the operator did, and a counterfactual that ran the boilers the way the operator actually ran them would leave the backing constraint slack and the channel positive. The honest form of the finding is therefore not that flexibility loads the grid in 2023. It is that in the hours where a pure cost-minimiser would keep the boilers off, a reserve obligation puts them on, and the model spends more of the year in that state than the operator does.
+
+\autoref{fig:4.3 reserve race} shows the race inside the committed hours for two runs, scenario 1 at 2024 and scenario 3 at 2025, as a waterfall over the same 88 demand-ranked hours restricted to those carrying a commitment, 67 of 88 in the first case and 72 of 88 in the second. The two panels are drawn on independent scales, and that has to be read first: the right panel's net bar draws at roughly the same height as the left's and is 6.3 times larger, $+$46.8 MW against $+$7.4. In both cases the activation shed outweighs the backing draw and the race comes out positive, so committed reserve does relieve the coincident peak on average across the committed hours in 2024 and 2025; the down-regulation draw, which raises the meter when the operator is paid to consume, subtracts 3.4 MW in the second case and nothing in the first. This is what makes the negative channel in 2023 a claim about the hours in which the shed does not outweigh the backing, rather than a blanket finding that reserve loads the grid, and the two figures are to be read together.
+
+% C4-G2
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Graphics/4. Results/fig-4-reserve-race.pdf}
+    \caption{The contributions to coincident-peak relief in the reserve-committed hours of two runs, as a waterfall: backing draw, activation shed, down-regulation draw and the net. The two panels are on independent scales.}
+    \label{fig:4.3 reserve race}
+\end{figure}
+
+The sharpest reading is about the reserve product rather than about the plant. C1's sign turns on whether the boiler was going to run anyway, which makes it a statement about how upward reserve is procured: a capacity product that paid for availability without requiring backed load in the hour would not produce it. Procuring balancing capacity from a price-responsive load can therefore work against capacity adequacy in exactly the hours when adequacy is tightest. That is a tension between two things the system operator wants, and it is also the reason C5 stays qualitative: headroom the reserve product consumes in the scarcest hours is not headroom that can be released to a queued load.
+
+%------------------------------------------------------------
+\subsubsection{Storage, Captured Value and Relief}
+\label{4-subsec:4.2.3 storage two perimeters}
+
+\autoref{fig:4.3 storage peak} follows both perimeters across the accumulator sweep at scenario 3, the applied-access run, in all three years. The upper panel is the flexibility value the operator captures; the lower is C1's freed-grid quantity in megawatts, on the same demand-ranked mask, with its sign marked. The two curves move together in 2024 and apart in the other two years, and the year dependence is the finding. In 2024 the first 124 MWh of storage add 33.6 MNOK of captured value and 1.7 MW of relief, and relief stays flat at about 9 MW across the rest of the range. In 2025 the same step adds 23.1 MNOK of value and takes 12.2 MW off the relief, which falls from 50.9 to 38.7 MW before recovering to 48 MW at the largest size; across the first 248 MWh the operator's captured value rises by 64.4 MNOK while relief falls by 14.6 MW. In 2023 the store turns relief into loading: 3.2 MW of relief with no store becomes $-$26.4 MW at 124 MWh and $-$29.7 at the installed size. A larger store lets the fleet back more reserve through the coincident peak by charging through it, which is captured value for the operator and, in the years and hours where the boilers would not otherwise have run, is draw the grid did not want. The divergence of the two perimeters as the store grows, which \autoref{2-subsec:2.5.2 value gap} took from the Danish island case, is measured here on one plant, and it runs in both directions depending on the year.
+
+% C4-S2
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/4. Results/fig-4-storage-peak.pdf}
+    \caption{The applied-access run across the accumulator sweep in each delivery year. Panel (a): the flexibility value the operator captures. Panel (b): coincident-peak relief on the demand-ranked one per cent mask, with the change across the first expansion step marked; positive is relief and negative is added draw.}
+    \label{fig:4.3 storage peak}
+\end{figure}
+
+\begin{keypoint}
+Two of the six socio-economic channels carry a number, and the total they give is a floor. Freed grid capacity is positive in 2024 and 2025 and negative in 2023 on the demand-ranked one per cent mask, and positive in six of ninety mask definitions overall: reserve commitment relieves the coincident peak only where the boilers would have run anyway. Avoided fossil peaking is small, 0.8 to 4.5 MNOK per year, bounded by the LNG share of a mostly biogenic peak fleet.
+\end{keypoint}
+
+%------------------------------------------------------------
+%------------------------------------------------------------
 \subsection{The Value Gap}
 \label{4-subsec:4.3 valuation gap}
 
+The gap is a division within the socio-economic total, not a difference standing beside it. The total of \autoref{3-subsec:3.7 gap and attribution} is the operator's own captured value plus the un-captured externality of C1 and C3, measured against R1, and what is reported is how that total splits between the operator and the parties that receive the remainder. Two registers are kept apart throughout and are never summed. The un-captured externality is value created by the dispatch that actually happens and reaching the operator through no mechanism; the suppressed value is the difference in what the operator can create between two regulatory settings, and it is a transfer with an enabler. Every banded figure is a band, the spread of the anchor's three grid-valuation methods carried through rather than chosen between. The subsection reports the division at every interruptible-tariff run and the operator's share of it, prices the tariff arrangement the operator holds against the standard one, and attributes the measured quantities across the four barrier types of \autoref{2-subsec:2.3 barriers}, introducing no barrier that chapter does not carry.
 
+%------------------------------------------------------------
+\subsubsection{The Division of the Socio-Economic Total}
+\label{4-subsec:4.3.1 division}
 
+\autoref{fig:4.4 gap composition} draws the division at all eighteen runs: the operator's captured value as the solid bar, the un-captured externality stacked on top of it where it is positive and, where it is negative, the operator's capture running past the priced socio-economic total as a hatched box. \autoref{tab:4.4 division} gives the nine interruptible-tariff runs with the operator's share. At the 2024 baseline the operator captures 65.79 MNOK of a priced socio-economic total of 73.73, or 89 per cent, and the un-captured externality is 7.94 MNOK on the central unit value, between 6.10 and 11.64 across the band, on the demand-ranked one per cent mask. The share barely moves along the access axis, at 89, 93 and 94 per cent in 2024 and 85, 89 and 87 in 2025, while the total more than doubles, from 73.73 to 209.63 MNOK in 2024 and from 90.75 to 331.92 in 2025. The externality is small as a share of the total and grows in absolute terms with access, because access produces the dispatch that generates it: displaced peaking heat grows 1.34 times from the baseline to applied access in 2024, 1.36 in 2023 and 1.76 in 2025.
 
+% C4-G1
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{Graphics/4. Results/fig-4-gap-composition.pdf}
+    \caption{The division of the priced socio-economic total at every run, grouped by delivery year. The solid bar is the operator's captured value; a positive un-captured externality stacks above it, and where the externality is negative the hatched box is the operator's capture running past the total. The whisker is the freed-grid unit-value band. Freed grid capacity rests on the demand-ranked one per cent mask throughout.}
+    \label{fig:4.4 gap composition}
+\end{figure}
 
+\begin{table}[h]
+\centering
+\caption{The division of the priced socio-economic total at the nine interruptible-tariff runs, in MNOK per year, on the demand-ranked one per cent mask. The un-captured externality is C1 plus C3 of \autoref{tab:4.3 channels}; the total is the operator's captured value plus its central estimate. The operator's share is capture over the central total, and it exceeds 100 per cent where the externality is negative. The total prices two of six channels and is a floor.}
+\small
+\begin{tabular}{c c r l r r}
+\toprule
+\textbf{Scen.} & \textbf{Year} & \textbf{Captured} & \textbf{Un-captured, MNOK} & \textbf{Priced total} & \textbf{Operator's} \\
+ & & \textbf{MNOK} & \textbf{low / mid / high} & \textbf{MNOK, mid} & \textbf{share, \%} \\
+\midrule
+1 & 2023 & 45.01 & $-$12.55 / $-$7.55 / $-$5.05 & 37.46 & 120 \\
+2 & 2023 & 72.37 & $-$35.66 / $-$21.94 / $-$15.09 & 50.43 & 144 \\
+3 & 2023 & 80.87 & $-$46.35 / $-$28.53 / $-$19.63 & 52.33 & 155 \\
+\addlinespace
+1 & 2024 & 65.79 & 6.10 / 7.94 / 11.64 & 73.73 & 89 \\
+2 & 2024 & 148.48 & 8.93 / 11.71 / 17.27 & 160.19 & 93 \\
+3 & 2024 & 197.75 & 9.09 / 11.88 / 17.44 & 209.63 & 94 \\
+\addlinespace
+1 & 2025 & 77.46 & 9.89 / 13.29 / 20.07 & 90.75 & 85 \\
+2 & 2025 & 198.14 & 19.05 / 25.65 / 38.84 & 223.78 & 89 \\
+3 & 2025 & 288.06 & 32.05 / 43.86 / 67.48 & 331.92 & 87 \\
+\bottomrule
+\end{tabular}
+\label{tab:4.4 division}
+\end{table}
 
+In ten of the eighteen runs the operator's capture exceeds the priced socio-economic total: all six of 2023, the three standard-tariff runs of 2024 and two of 2025. At the 2023 baseline the operator captures 45.01 MNOK against a total of 37.46, so the externality is $-$7.55 MNOK and the hatched box in the figure is the 20 per cent by which the capture runs past the total; at scenario 3 in 2023 it is 55 per cent. The minus sign means what \autoref{3-subsec:3.7 gap and attribution} says it may mean: in the hours the mask selects, the dispatch that flexibility produced drew more power than the reference would have, and the socio-economic side priced that draw at the same unit value it would have priced relief. It is the measured mechanism of \autoref{4-subsec:4.2.2 reserve and relief}, and not an artefact of the arithmetic. What it does not license is the sentence that the operator captures more than society gains. Three channels of the six carry no number and all three are positive by construction, so the total is a floor. The supported sentence is that on the two channels this thesis prices, the operator's capture exceeds the priced socio-economic total in ten of the eighteen runs, and whether it would still do so with C4, C5 and C6 priced is a question this instrument cannot answer.
 
+Set beside the second register, the division is small. At the 2024 baseline the un-captured externality is 7.94 MNOK. The suppressed value, the upward reserve revenue the access ceiling withholds between today's 29 MW and the 200 MW applied for, is 138.42 MNOK, and the net-cost saving it would bring the operator is 131.96. The two are not added, because the first is a share of a total that exists and the second is the difference between two totals under different rules, and no figure in this chapter is their sum. Read as two registers they say different things about the same plant. Value that the dispatch creates today and nobody pays for is on the order of a tenth of what the operator captures; value that the access allocation stops from being created at all is on the order of twice it. The first is what a payment route would redistribute; the second is what an allocation withholds, and it is the enabler of \autoref{3-subsec:3.7 gap and attribution}. Access does not reallocate the externality, it produces it, which the growth in displaced peaking heat across the access axis measures. Three categories of value are therefore different in kind rather than in size: a small measured externality, a large measured suppressed value, and a third that the model prices at zero by construction and reports in words.
 
+The operator's share above is the capture ratio in its first form, total receipts against the priced total. Its second form separates what the operator captures as a saving of real resources from what it captures as a transfer, because \autoref{3-subsec:3.6 socio-economic valuation} splits the ledger on that basis and a transfer is not a welfare effect. \autoref{tab:4.4 split} makes the split at the nine interruptible-tariff runs. At the 2024 baseline the flexibility value of 65.79 MNOK consists of a 4.30 MNOK saving of real resources, 26.44 MNOK less fuel and variable dispatch cost against 22.15 MNOK more electricity purchased at spot, and 61.49 MNOK of transfers: 50.92 of upward reserve revenue, 12.75 of downward reserve revenue net of the energy it buys, and 2.18 more paid in grid tariff and electricity tax. Above today's access the resource saving turns negative in every year, to $-$33.57 and $-$58.48 MNOK at partial and applied access in 2024. The fleet buys more electricity to back more reserve than it saves in fuel, and the whole of what it captures is a transfer from the reserve market. Set against the resource saving rather than against total receipts, the un-captured externality at the 2024 baseline, 7.94 MNOK, is nearly twice what the operator captures in real resources, and at every 2024 and 2025 run above today's access it is the only positive resource effect the priced analysis contains. That split is reported here and weighed in \autoref{5-sec:5 discussion}; what this chapter states is the arithmetic and one caveat on it. A transfer's social value is not the transfer. In a competitive reserve market the payment largely replaces payment to another provider, and the welfare effect is the cost saving against whoever would otherwise have supplied the reserve, which this model, a price taker in that market, does not hold and cannot compute.
 
+\begin{table}[h]
+\centering
+\caption{The operator's flexibility value split into resource effects and transfers, at the nine interruptible-tariff runs, in MNOK per year against the no-flexibility counterfactual. A positive entry is a saving to the operator; the electricity column is negative because the flexible plant buys more power. Fuel and electricity are resource effects. Reserve revenue, the grid tariff and the electricity tax are transfers between parties, and the downward reserve column is net of the energy the operator buys when activated downward.}
+\small
+\begin{tabular}{c c r r r r r r r}
+\toprule
+\textbf{Scen.} & \textbf{Year} & \textbf{Flexibility} & \textbf{Electricity} & \textbf{Fuel and} & \textbf{Resource} & \textbf{Upward} & \textbf{Downward} & \textbf{Grid tariff} \\
+ & & \textbf{value} & \textbf{at spot} & \textbf{variable cost} & \textbf{saving} & \textbf{reserve} & \textbf{reserve, net} & \textbf{and tax} \\
+\midrule
+1 & 2023 & 45.01 & $-$37.73 & 41.81 & 4.07 & 32.57 & 9.81 & $-$1.45 \\
+2 & 2023 & 72.37 & $-$71.18 & 51.22 & $-$19.96 & 72.13 & 21.99 & $-$1.79 \\
+3 & 2023 & 80.87 & $-$85.65 & 55.54 & $-$30.11 & 88.43 & 24.49 & $-$1.94 \\
+\addlinespace
+1 & 2024 & 65.79 & $-$22.15 & 26.44 & 4.30 & 50.92 & 12.75 & $-$2.18 \\
+2 & 2024 & 148.48 & $-$68.76 & 35.19 & $-$33.57 & 138.20 & 48.02 & $-$4.17 \\
+3 & 2024 & 197.75 & $-$94.35 & 35.87 & $-$58.48 & 189.34 & 71.68 & $-$4.79 \\
+\addlinespace
+1 & 2025 & 77.46 & $-$25.83 & 38.46 & 12.62 & 42.00 & 25.02 & $-$2.18 \\
+2 & 2025 & 198.14 & $-$59.24 & 54.21 & $-$5.04 & 113.93 & 93.39 & $-$4.15 \\
+3 & 2025 & 288.06 & $-$81.18 & 60.31 & $-$20.87 & 160.36 & 154.17 & $-$5.59 \\
+\bottomrule
+\end{tabular}
+\label{tab:4.4 split}
+\end{table}
 
+%------------------------------------------------------------
+\subsubsection{The Tariff Barrier}
+\label{4-subsec:4.3.2 tariff barrier}
 
+What the three figures below price has to be stated before any of them is read, or all three read as an argument that one tariff is better than another, which nobody disputes. The district heating operator already holds the interruptible arrangement for its entire boiler fleet (operator communication, Hafslund Celsio, 28 August 2026), and \autoref{2-subsec:2.3.2 market barriers} establishes what that arrangement is: the standard escape from the capacity charge, and not a regulated entitlement. The capacity charge is a conditional barrier, binding in its standard form and largely neutralised for the incumbent's interruptible connections, and the condition is discretionary. The figures therefore price a discretionary arrangement the operator has no legal right to: what is at stake if it is narrowed, withdrawn or not granted, and what an operator that does not hold one faces, which is the position of any new entrant. The price is 45.68 MNOK per year at today's access in 2024, and 84.90 if the access application succeeds.
 
+\autoref{fig:4.4 tariff waterfall} decomposes that 45.68 MNOK for the 2024 baseline against scenario 4, the same plant in the same year with the same 29 MW of access under the standard tariff. The bars are not components of the tariff; they are the components of the total cost difference the tariff causes, and only the first of them, 19.38 MNOK, is money paid to the network. The tariff changes the marginal cost of drawing power, the optimisation re-solves, and the plant dispatches differently: it buys 36.69 MNOK less electricity and burns 61.38 MNOK more peak fuel, a net 24.69 MNOK, reserve revenue falls by 2.27 MNOK and the electricity tax by 0.66. Electric-boiler heat falls from 396.8 to 282.4 GWh, by 29 per cent, and peak-fuel heat rises from 241.3 to 314.8 GWh. The mechanism is substitution rather than surcharge. The capacity charge does not mainly charge the plant more; it changes what the plant burns, and more than half of what the standard tariff costs is not what it charges but what it makes the plant do. That is the trap \autoref{2-subsec:2.3.2 market barriers} describes, quantified on the operator's own fleet. The two totals on the right are the same difference on two bases, and the grey one is the wrong answer, shown on purpose. The optimisation minimises the costs that depend on dispatch, and the interruptible tariff's subscribed-capacity charge, 31.01 MNOK per year billed on subscribed megawatts however the plant runs, is correctly outside its objective. The moment two tariff structures are compared that constant stops being irrelevant, because the standard tariff does not pay it: differencing the two objectives counts one structure's capacity charge at zero and gives 76.69 MNOK, and including every tariff component gives 45.68. The naive comparison overstates the arrangement's worth by a factor of 1.68, and every tariff figure in this thesis is on the complete basis. One detail of the two runs is worth a sentence, because the same mechanism returns on the socio-economic side: the interruptible run's peak grid draw is exactly the 250 MW network bound, and the standard run's is 221 MW. Under the standard tariff it is the capacity charge, and not the network, that sets the peak.
 
+% C4-T1
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Graphics/4. Results/fig-4-tariff-waterfall.pdf}
+    \caption{What the interruptible arrangement is worth at the 2024 baseline: the change in annual net cost when the same plant, year and access are run under the standard tariff, decomposed into the ledger lines that move, with the total on the tariff-complete basis and on the objective alone. Only the first bar is money paid to the network; the others are the dispatch response.}
+    \label{fig:4.4 tariff waterfall}
+\end{figure}
 
+\autoref{fig:4.4 tariff social} carries the same switch across the three delivery years, in two ledgers with one sign convention, down being worse. The left panel splits the operator's total into the network bill and the dispatch response it provokes. The dispatch response is stable, at $-$26.13, $-$26.30 and $-$20.19 MNOK in 2023, 2024 and 2025, while the network bill swings from $+$10.23 through $-$19.38 to $-$2.73: in 2023 the standard tariff bills the operator less, not more, because the plant cuts its peak from 250 to 127 MW to escape the capacity charge and pays less for a connection it uses less. The bill is not exogenous; it is what the plant pays after re-optimising, so 2023's positive bill is a dispatch choice rather than a discount. The honest form is that the bill the plant ends up paying is small and can go either way, and that the cost of the dispatch that gets it there is large and stable. The headline swings, from 15.90 through 45.68 to 22.91 MNOK, only because the bill does; the barrier is behavioural. The right panel sets the operator's total against the two socio-economic channels the switch moves. Under the standard tariff the plant draws less in the 88 tightest demand hours, by 20.32, 15.21 and 23.35 MW, and burns more gas, worth $-$5.04, $-$5.19 and $-$4.89 MNOK of carbon damage above the levy, so the two channels together are worth $+$15.28, $+$10.01 and $+$18.46 MNOK to society in the three years while the switch costs the operator 15.90, 45.68 and 22.91. The net the panel marks is $-$0.62, $-$35.66 and $-$4.46 MNOK, and that net is an upper bound on the social loss, for the reason that is the central caveat of this subsection. The operator's total contains the network bill, which is a transfer inside society: the operator pays it and grid ratepayers receive it, and no resource is consumed. Excluding it, the net social effect of the switch is $-$10.85, $-$16.29 and $-$1.72 MNOK, within 15 MNOK of one another and negative in every year, and the transfer is what makes the drawn net look volatile; the reading that the standard tariff is near-neutral in two years and severe in one is an artefact of the bill. The thesis does not net transfers out of any ledger, because doing so would have to be done consistently across every gap row and the network bill is only one of the transfers there, so the drawn net stands and the left panel hands the reader the transfer term so that the correction can be checked. The freed grid capacity in the right panel rests on hours ranked by heat demand, and its sign is robust to the width of that mask in a way C1's flexibility relief is not: swept across all five widths in every year, the tariff relief is positive in fifteen of fifteen cells, and the two channels together run from $+$10.01 to $+$37.13 MNOK, so the one per cent figure is the conservative end of its own range. Ranked by price instead, the relief collapses and the two channels together go negative in thirteen of fifteen cells, because under a price-ranked mask the interruptible run has already curtailed for price and the two tariff structures draw nearly the same.
 
+% C4-T2
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Graphics/4. Results/fig-4-tariff-social.pdf}
+    \caption{The tariff switch across the three delivery years at today's access, in MNOK per year, negative being worse. Panel (a): the operator's ledger, split into the network bill and the dispatch response. Panel (b): the operator's total against the two socio-economic channels the switch moves, freed grid capacity on the demand-ranked one per cent mask and carbon above the levy, with the net marked. The net contains the network bill, a transfer, and is an upper bound on the social loss.}
+    \label{fig:4.4 tariff social}
+\end{figure}
 
+\autoref{fig:4.4 tariff access} draws the price of the arrangement against the access axis, one line per delivery year, on the tariff-complete basis of the black bar in \autoref{fig:4.4 tariff waterfall} rather than the grey one, so a reader carrying 76.69 MNOK forward from that figure will find 45.68 here and the numbers have not moved. All three lines rise. The interruptible arrangement is worth 45.68 MNOK at today's 29 MW, 65.74 at 100 MW and 84.90 at 200 MW in 2024, 15.90, 23.08 and 27.03 in 2023, and 22.91, 45.39 and 68.30 in 2025. The tariff barrier compounds with access. The mechanism is the one \autoref{2-subsec:2.4.2 policy evolution} describes: the standard schedule's capacity charge is levied on the single highest hourly draw in each calendar month, and a fleet holding more reserve must draw more to back it, so the charge bites hardest exactly when the operator does more of what the balancing market pays for. The slopes differ, and the difference is a result: the line rises by a factor of 1.70 across the axis in 2023, 1.86 in 2024 and 2.98 in 2025, so 2025 compounds hardest from half of 2024's starting level. The 2023 line is the flattest and the most reserve-loaded on the figure. Reserve revenue is 19.9, 33.9 and 44.0 per cent of the 2023 difference at the three access levels, against 5.0 to 16.6 per cent in 2024 and 11.9 to 22.4 in 2025, so the activation-rule seam of \autoref{4-subsec:4.1.1 baseline} bites hardest at the right-hand end of the line the eye uses to judge its slope. The policy reading, which is the reason the figure exists, is that the two barriers interact rather than add: the more reserve the operator is permitted to sell, the more the tariff structure costs, and removing the access cap without touching the tariff hands back less than the access figures alone suggest.
+
+% C4-T3
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/4. Results/fig-4-tariff-access.pdf}
+    \caption{The cost of the standard tariff against the interruptible arrangement at the three access levels, one line per delivery year, on the tariff-complete basis. The 2023 line carries the largest reserve share of its difference and rests on the binary activation rule.}
+    \label{fig:4.4 tariff access}
+\end{figure}
+
+%------------------------------------------------------------
+\subsubsection{The Access Barrier and the Attribution}
+\label{4-subsec:4.3.3 attribution}
+
+The access barrier is priced by the bracket of \autoref{4-subsec:4.1.3 reserve market participation}: between today's 29 MW and the 200 MW applied for, upward reserve revenue grows by 55.85 MNOK in 2023, 138.42 in 2024 and 118.36 in 2025. As measured it is a difference in the operator's own ledger and therefore a transfer, and it is never reported without the enabler beside it. Over the same step the peak-boiler heat that flexibility displaces grows 1.36, 1.34 and 1.76 times, and that growth, not the revenue, is the welfare part. The transfer's own social value is not computable here, for the reason given in \autoref{4-subsec:4.3.1 division}, and the payer is not a single party. The system operator procures the capacity market, activation is settled through the imbalance settlement against the balance-responsible parties under the terms that govern providers of balancing services \cite{statnett_forslag_2025}, and the system operator recovers its own costs through tariffs, so the bracket is a transfer from the reserve market rather than from one named counterparty, and the chapter names none. The price-taking caveat and the market-depth measurement of \autoref{4-subsec:4.1.3 reserve market participation} attach to every figure in this paragraph.
+
+\autoref{tab:4.4 attribution} maps the measured quantities onto the four barrier types of \autoref{2-subsec:2.3 barriers}, in the form \autoref{tab:3.7 attribution} specifies, with the kind column that keeps it from being read as a ranking. The three mechanisms \autoref{2-subsec:2.3.2 market barriers} names each carry a row: the monthly-peak capacity charge and its interruptible conditioning is the tariff row, the access regime is the institutional row, and the absence of a product paying for the services that fall outside the reserve market is the row that carries the un-captured externality, the missing-product row. Price regulation carries no arithmetic row, because heat revenue is invariant to dispatch under the delivery obligation and the model cannot see what a ceiling on it costs; that is a property of the design stated in \autoref{3-subsec:3.7 gap and attribution}, not a gap in the data. The technical row carries a number for the first time, the 2.22 MNOK of \autoref{4-subsec:4.0.1 envelope in use} in 2024 and 0.66 and 1.37 MNOK in the other years, and zero under the standard tariff. \autoref{2-subsec:2.3.1 tech barriers} argued that the technical layer bounds what the other three types can be blamed for, and the arithmetic now says how little of it: the technical row is a twentieth of the tariff row and a sixtieth of the access bracket in 2024. No barrier surfaces that \autoref{2-subsec:2.3 barriers} does not catalogue. The compounding of the tariff and access barriers found in \autoref{4-subsec:4.3.2 tariff barrier} is an interaction between two catalogued mechanisms rather than a fifth, and the reserve-backing tension of \autoref{4-subsec:4.2.2 reserve and relief} sits inside the missing-product row, as a property of the one product that exists.
+
+\begin{table}[h]
+\centering
+\caption{Attribution of the measured quantities across the four barrier types of \autoref{2-subsec:2.3 barriers}, by delivery year, in MNOK per year, in the form of \autoref{tab:3.7 attribution}. The kind column states what each quantity is; the rows are differently measured objects and are not ranked against one another on magnitude. The access bracket is reported with the growth in displaced peaking heat it enables, and price regulation carries no arithmetic row by construction.}
+\footnotesize
+\begin{tabular}{p{2.3cm} p{2.6cm} r r r p{4.6cm}}
+\toprule
+\textbf{Barrier type} & \textbf{Mechanism} & \textbf{2023} & \textbf{2024} & \textbf{2025} & \textbf{Kind} \\
+\midrule
+Institutional & Reserve-access allocation & 55.85 & 138.42 & 118.36 & Transfer, upper bound under price taking; enables displaced peaking heat to grow 1.36, 1.34 and 1.76 times \\
+\addlinespace
+Economic and market & Grid tariff structure & 15.90 & 45.68 & 22.91 & Cost difference between two tariff structures at today's access, tariff-complete \\
+\addlinespace
+Regulatory and market design & Missing flexibility product & $-$7.55 & 7.94 & 13.29 & Un-captured externality at the baseline run, central band, demand-ranked one per cent mask \\
+\addlinespace
+Price regulation & Heat price ceiling and the retail regime & qualitative & qualitative & qualitative & No arithmetic row: heat revenue is invariant to dispatch \\
+\addlinespace
+Technical & District heating network transfer limits & 0.66 & 2.22 & 1.37 & Cost difference between two physical states of the heat network; zero under the standard tariff \\
+\bottomrule
+\end{tabular}
+\label{tab:4.4 attribution}
+\end{table}
+
+Which quantity is largest is stated with its kind, because the kinds are not comparable on magnitude. In 2024 the access bracket, a transfer, is 138.42 MNOK; the tariff difference, a cost difference between two regimes, is 45.68; the un-captured externality, the one welfare quantity in the table, is 7.94; and the technical row, a cost difference between two states of the heat network, is 2.22. The ordering holds in all three years, and it is stated as an ordering of differently measured objects and not as a ranking of barriers by importance.
+
+\begin{keypoint}
+On the two priced channels the operator captures 89 per cent of the socio-economic total at the 2024 baseline, 85 to 94 per cent across the 2024 and 2025 access axis, and more than the whole of it in every 2023 run, on a total that is a floor; in real resources it captures 4.30 MNOK of a priced 12.24 at the baseline, the rest being transfers. The un-captured externality is 7.94 MNOK per year at the baseline against an access bracket of 138.42, and the two are never summed. The interruptible arrangement the operator holds is worth 45.68 MNOK per year at today's access in 2024 and 84.90 at the applied-for access: the tariff barrier compounds with access, and more than half of its cost is the dispatch it forces rather than the charge it levies.
+\end{keypoint}
+
+%------------------------------------------------------------
+%------------------------------------------------------------
+\subsection{Sensitivity of the Results}
+\label{4-subsec:4.1.4 sensitivity analysis}
+
+Two kinds of input are swept, and they are reported apart because they behave differently. The first kind re-solves the model and its counterfactual at each point, so both a level and a difference are recovered; those are the four named sweeps of \autoref{3-subsec:3.5.2 stack}, and the delivery years read as a bound. The second kind prices quantities the runs have already produced and re-solves nothing; those are the valuation axes of \autoref{3-subsec:3.6 socio-economic valuation}. Nothing appears here that \autoref{3-sec:3} has not introduced, the programme is one-at-a-time and carries no probability, and each row states what was varied and why the result moves, so that no bar has to be taken on trust.
+
+%------------------------------------------------------------
+\subsubsection{Inputs That Re-Solve the Model}
+\label{4-subsec:4.4.1 lp sensitivities}
+
+\autoref{fig:4.5 sensitivity cost value} draws three inputs against two columns, the annual cost level of the 2024 baseline on the left and its flexibility value on the right, and the two panels are drawn on scales more than an order of magnitude apart, because a shared scale would make every bar on the right invisible. That is the finding before any row is read: the largest inputs move the level by tens or hundreds of millions of kroner and the difference by single millions, which is the quantified form of the evidential tiering of \autoref{3-subsec:3.2 evidence base}. \autoref{tab:4.5 sensitivity} orders the rows by their influence on the difference.
+
+% C4-X1
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{Graphics/4. Results/fig-4-sensitivity-cost-value.pdf}
+    \caption{Three inputs that re-solve the model, at the 2024 baseline: the change in the annual cost level on the left and in the flexibility value on the right, with the range of rates that have been in force in the darker shade and the full swept range in the lighter. The two panels are on different scales.}
+    \label{fig:4.5 sensitivity cost value}
+\end{figure}
+
+The waste-incinerator carbon levy is the largest term in the cost base, and \autoref{fig:4.5 carbon levy sweep} sweeps it across eight rates from zero to 2{,}500 NOK per tonne, of which 192, 238, 882 and 908 have been in force. Across the rates in force the level moves 188 MNOK and the flexibility value 2.0; across the whole range the level moves 623 MNOK and the value 5.85, a factor of 106. The held 2024 rate of 882 NOK per tonne is what the standardisation of \autoref{3-subsec:3.5.2 stack} imposes on the other years, and this is what it costs: nothing that the research question asks about, because the levy is charged on both sides of every within-year difference. The line bends, which is why the sweep is a figure rather than a sentence. Waste heat falls from 1{,}235 GWh at zero levy to 860 at 2{,}500 and electric-boiler heat rises from 367 to 528; between 908 and 2{,}500 NOK per tonne the boilers begin to displace the incinerator, and peak heat moves for the first time, from 241 to 274 GWh. At a high enough levy the merit order starts to invert. The figure is a statement about the model's design and not a recommendation about the levy, and it is not a carbon-price sensitivity on the socio-economic side, whose carbon path is a different quantity.
+
+% C4-CO2
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Graphics/4. Results/fig-4-carbon-levy-sweep.pdf}
+    \caption{The waste-incineration carbon levy swept from zero to 2{,}500 NOK per tonne at the 2024 baseline scenario: annual net cost and flexibility value above, waste heat and electric-boiler heat below, with the rates that have been in force circled and the held 2024 rate marked. Each point is a full re-solve of the run and its counterfactual.}
+    \label{fig:4.5 carbon levy sweep}
+\end{figure}
+
+The electricity tax exemption is swept across the four statutory 2024 rates: the reduced rate of 5.80 NOK/MWh billed to district heating production in every headline run, the general winter rate of 95.10, the calendar-day-weighted general blend of 147.17 and the general summer rate of 164.40 \cite{stortinget_stortingsvedtak_nodate}. The row answers what withdrawing the exemption would cost, and the answer is first-order in the strict sense: 60.41 MNOK per year at the blend, between 40.42 and 66.39 at the two endpoint rates, comparable to the entire flexibility value and larger than the tariff barrier. Electric-boiler heat falls by a third, from 396.8 to 261.3 GWh at the blend, so the exemption is not a transfer that leaves behaviour alone; it is what makes power-to-heat run at all. \autoref{2-subsec:2.4.2 policy evolution} reads the reduced rate as a second-order input cost and as a first-order ceiling risk, and the input side is now measured: the flexibility value falls by 8.40 MNOK at the blend. Under the standard tariff the level cost is 44.03 MNOK and boiler heat halves. Each point bills one flat rate for the whole year, so the blend cannot shift draw from the dear months into the cheap ones the way a seasonal rate would; it overstates the burden slightly, and the two endpoint rates bracket it. The exemption is relief the operator receives, and withdrawing it would reduce flexibility, so it is a ceiling risk and not a barrier whose removal releases value, and it carries no row in \autoref{tab:4.4 attribution} for that reason.
+
+The thermal bottleneck is the sweep of \autoref{4-subsec:4.0.1 envelope in use}: 2.22 MNOK on the level and 1.31 on the flexibility value in 2024, and nothing under the standard tariff. A small number is the finding. Market depth is the fourth named sweep, and it is carried on the access axis rather than at one point. Removing the constraint that limits committed capacity to the volume the zone contracted in the hour lowers the level by 2.05, 23.31 and 67.69 MNOK at the three 2024 access levels, by 7.88, 48.43 and 107.36 in 2023 and by 1.04, 13.30 and 43.09 in 2025, and it raises the 2024 access bracket from 138.42 to 256.42 MNOK. It is the largest single influence on any access figure in the chapter, and it is the price-taking declaration of assumption A5 priced.
+
+\begin{table}[h]
+\centering
+\caption{The inputs that re-solve the model, at the 2024 baseline scenario, ordered by their influence on the flexibility value. Each entry is the change against the headline run, in MNOK per year; where a range is swept, its two ends are given. The market-depth row is given at today's access and at applied access, because it is carried across the access axis.}
+\small
+\begin{tabular}{p{4.0cm} p{4.4cm} r r}
+\toprule
+\textbf{Input} & \textbf{Range swept} & \textbf{Cost level} & \textbf{Flexibility value} \\
+\midrule
+Market depth, applied access & cap on to cap off & $-$67.69 & $+$67.69 \\
+Electricity tax & 5.80 to 164.40 NOK/MWh, three statutory rates & $+$40.42 to $+$66.39 & $-$5.36 to $-$9.35 \\
+Carbon levy, full range & 0 to 2{,}500 NOK/t & $-$234.17 to $+$389.06 & $-$2.47 to $+$3.38 \\
+Market depth, today's access & cap on to cap off & $-$2.05 & $+$2.05 \\
+Carbon levy, rates in force & 192 to 908 NOK/t & $-$181.62 to $+$6.64 & $-$1.95 to $+$0.05 \\
+Thermal bottleneck & 250 to 292.6 MW & $-$2.22 & $+$1.31 \\
+\bottomrule
+\end{tabular}
+\label{tab:4.5 sensitivity}
+\end{table}
+
+%------------------------------------------------------------
+\subsubsection{Inputs That Price the Quantities}
+\label{4-subsec:4.4.2 valuation sensitivities}
+
+\autoref{fig:4.5 gap uncertainty} sweeps the three valuation inputs behind the un-captured externality of the 2024 baseline, 7.94 MNOK, and none of them re-solves anything. The scarce-hour definition dominates, because it can change C1's sign and not only its size. Over the two selectors and five widths of \autoref{4-subsec:4.2.1 channels}, the freed-grid quantity at the 2024 baseline runs from $-$10.56 MW under the price-ranked two per cent mask to $+$9.08 MW under the demand-ranked two per cent mask, against $+$6.15 on the headline mask, which moves the externality by $-$16.7 to $+$2.9 MNOK. The grid-capacity unit value is the anchor's own three-method spread of 0.7 to 1.6 MNOK per MW per year around 1.0, a price rather than a quantity, and it moves the externality by $-$1.8 to $+$3.7 MNOK; that band is the low, central and high band every gap figure in this chapter carries, and it is the grid-valuation spread and not a carbon range. The fossil share of displaced peak heat is swept from all-biogenic, where C3 is zero and the externality falls by 1.79 MNOK, to a fifty per cent share, which raises it by 0.22 against the realised 0.446; the fifty per cent endpoint is a round bracket rather than a sourced bound, and it is reported as one.
+
+% C4-X2
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Graphics/4. Results/fig-4-gap-uncertainty.pdf}
+    \caption{The three valuation inputs behind the un-captured externality of the 2024 baseline, and the change in that externality across the range of each: the scarce-hour definition over two selectors and five widths, the freed-grid unit value across its published band, and the fossil share of displaced peak heat from zero to one half. None re-solves the model.}
+    \label{fig:4.5 gap uncertainty}
+\end{figure}
+
+The carbon path is the axis the governing framework makes mandatory, and it is reported as the framework requires \cite{finansdepartement_prinsipper_2021}. C3 is priced above the levy, so on the effort-sharing path of 1{,}639 NOK per tonne it carries 639 NOK per tonne of un-captured damage. On the allowance-system path of 990 NOK per tonne it would carry nothing, because the operator's own levy of 1{,}000 NOK per tonne already exceeds it, and the channel is zero on that path by the net-of-levy rule rather than by any absence of emissions. Across the mandatory band of 742 to 2{,}084 NOK per tonne the channel at the 2024 baseline runs from zero to 3.03 MNOK. The forward allowance-price arm is not set, and it is reported as unset rather than filled. The ninety-cell sweep of \autoref{4-subsec:4.2.1 channels} is the same scarce-hour axis at every run, and it is the one sensitivity in the programme on which a sign turns rather than a size.
+
+%------------------------------------------------------------
+\subsubsection{Robustness Across Delivery Years}
+\label{4-subsec:4.4.3 year robustness}
+
+The delivery years are the test of whether the two quantities the thesis leans on hardest are artefacts of one year's weather, prices and activation record, and the answer has two halves. The sign and the ordering hold in every year. The standard tariff costs more than the interruptible one at every access level in every year; the difference rises with access in every year; the flexibility value rises with access on both tariff structures in every year; and the interruptible tariff carries more flexibility value than the standard one at every scenario. The magnitudes do not hold. The tariff difference at today's access runs 15.90, 45.68 and 22.91 MNOK across 2023, 2024 and 2025, a factor of 2.9; the access bracket 55.85, 138.42 and 118.36, a factor of 2.5; and the baseline flexibility value 45.01, 65.79 and 77.46, a factor of 1.7. The accumulator step is the steadiest quantity in the whole grid, at 14.85 to 22.45 MNOK. What varies is the mechanism of \autoref{4-subsec:4.0.2 validation}, how much cheap power coincided with heat load, together with, in 2023, the definition of activation the year is measured on. The supported claim is that the sign and the ordering are robust across delivery years and the magnitudes are not, and a claim stronger than that is not made.
 
 \newpage
