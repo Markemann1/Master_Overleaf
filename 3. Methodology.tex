@@ -204,14 +204,14 @@ The \textbf{heat balance} equates supply to the exogenous demand in every hour, 
 \end{equation}
 That adjustment is what makes a reserve commitment genuinely cost something: an activated up-regulation removes boiler heat that some other source has to replace at its own marginal cost.
 
-The \textbf{storage recursion} carries the state of charge forward hour by hour with a round-trip efficiency and a standby loss, bounds it by usable capacity, bounds charge and discharge by the tank's power rating, and requires the terminal state to equal the initial state so that end-of-horizon depletion cannot be booked as a gain:
+The \textbf{storage recursion} of \autoref{eq:3.4.1 soc} carries the state of charge forward hour by hour with a round-trip efficiency and a standby loss, \autoref{eq:3.4.1 soc bounds} bounds it by usable capacity and bounds charge and discharge by the tank's power rating, and \autoref{eq:3.4.1 soc terminal} requires the terminal state to equal the initial state so that end-of-horizon depletion cannot be booked as a gain:
 \begin{align}
     \text{soc}_t &= (1 - \lambda)\,\text{soc}_{t-1} + \eta^{c}\,\text{ch}_t - \frac{\text{dis}_t}{\eta^{d}} && \forall t \in \mathcal{T} \label{eq:3.4.1 soc} \\
     \text{soc}_0 &= \text{soc}_T = \sigma \bar{E}^{\text{acc}} \label{eq:3.4.1 soc terminal} \\
     0 \leq \text{soc}_t &\leq \bar{E}^{\text{acc}}, \qquad 0 \leq \text{ch}_t,\ \text{dis}_t \leq \bar{P}^{\text{acc}} && \forall t \in \mathcal{T} \label{eq:3.4.1 soc bounds}
 \end{align}
 
-\textbf{Capacity bounds} apply per asset and at the fleet level:
+\textbf{Capacity bounds} apply per asset and at the fleet level, with \autoref{eq:3.4.1 asset caps} holding the heat pump, the electric boiler and the dump cooler to their installed capacities:
 \begin{align}
     \phi A_t \leq &\ q^{\text{wte}}_t \leq A_t && \forall t \in \mathcal{T} \label{eq:3.4.1 wte floor} \\
     0 \leq &\ q^{\text{hp}}_t \leq \bar{Q}^{\text{hp}}, \qquad 0 \leq q^{\text{eb}}_t \leq \eta^{\text{eb}} \bar{Q}^{\text{eb}}, \qquad 0 \leq q^{\text{dump}}_t \leq \bar{Q}^{\text{dump}} && \forall t \in \mathcal{T} \label{eq:3.4.1 asset caps} \\
@@ -220,20 +220,20 @@ The \textbf{storage recursion} carries the state of charge forward hour by hour 
 \end{align}
 Each peak-fuel tranche is capped at its own installed capacity in \autoref{eq:3.4.1 peak stack}, so the merit order among the three fuels is decided by their marginal costs rather than imposed. The waste incinerator carries a minimum-load floor as well as a ceiling in \autoref{eq:3.4.1 wte floor}, because reducing it below roughly half of availability degrades steam production and the turbines (operator communication, Hafslund Celsio, 28 August 2026). And \autoref{eq:3.4.1 concurrent} caps the scheduled electrical draw at the concurrently dispatchable 250 MW of \autoref{3-subsec:3.3 technical envelope}, which is a scalar standing in for a network the model does not represent. The bound applies to the scheduled position rather than the metered one, since the fleet has to be running at that level for reserve to be sheddable from it; applying it to the metered draw would let the optimisation schedule above the bound and hide the excess behind an activation.
 
-\textbf{Reserve participation} is bounded in three ways, and each bound encodes a different real constraint. Eligibility and market depth cap what may be committed:
+\textbf{Reserve participation} is bounded in three ways, and each bound encodes a different real constraint. Eligibility and market depth cap what may be committed, in \autoref{eq:3.4.1 eligibility} and \autoref{eq:3.4.1 depth} respectively:
 \begin{align}
     K^{\uparrow}_t \leq K^{\text{elig}}, \qquad K^{\downarrow}_t &\leq K^{\text{elig}} && \forall t \in \mathcal{T} \label{eq:3.4.1 eligibility} \\
     K^{\uparrow}_t \leq \bar{K}^{\uparrow}_t, \qquad K^{\downarrow}_t &\leq \bar{K}^{\downarrow}_t && \forall t \in \mathcal{T} \label{eq:3.4.1 depth}
 \end{align}
 Eligibility caps committed capacity at the access level the run is set to, with a separate row for each direction, because the capacity-area regime allocates 3 MW up and 3 MW down per area on total prequalified volume across all reserve products \cite{statnett_innforing_2026}. Market depth caps committed capacity in each hour at the volume the NO1 zone actually contracted in that hour, which is a market-size fact rather than a model of bid acceptance. That bound solves one problem and leaves another: it prevents the operator from selling more capacity than the market bought, and it does not cap activated energy, which is computed as the historical zonal activation share applied to the model's own commitment. At high committed volumes the modelled activated energy can therefore exceed what the zone actually consumed, and \autoref{3-subsec:3.4.3 assumptions} states the consequence for the price-taking declaration.
 
-The third bound is deliverability, which requires that a full call could be honoured. Up-regulation must be backed by boiler output that could actually be shed, and the resulting heat shortfall must be coverable in both power and stored energy:
+The third bound is deliverability, which requires that a full call could be honoured. Up-regulation must be backed by boiler output that could actually be shed, \autoref{eq:3.4.1 backed}, and the resulting heat shortfall must be coverable in both power and stored energy, \autoref{eq:3.4.1 up power cover} and \autoref{eq:3.4.1 up energy cover}:
 \begin{align}
     K^{\uparrow}_t &\leq \frac{q^{\text{eb}}_t}{\eta^{\text{eb}}} && \forall t \in \mathcal{T} \label{eq:3.4.1 backed} \\
     \eta^{\text{eb}} (1 - \alpha^{\uparrow}_t) K^{\uparrow}_t &\leq (\bar{P}^{\text{acc}} - \text{dis}_t) + (\bar{Q}^{\text{hp}} - q^{\text{hp}}_t) + (\bar{Q}^{\text{cov}} - q^{\text{peak}}_t) && \forall t \in \mathcal{T} \label{eq:3.4.1 up power cover} \\
     \eta^{\text{eb}} (1 - \alpha^{\uparrow}_t) K^{\uparrow}_t &\leq \eta^{d}\, \text{soc}_{t-1} && \forall t \in \mathcal{T} \label{eq:3.4.1 up energy cover}
 \end{align}
-Down-regulation is the mirror. It requires electrical headroom under the concurrent bound, and a heat sink with room for an hour of the call in both power and volume:
+Down-regulation is the mirror. It requires electrical headroom under the concurrent bound, \autoref{eq:3.4.1 dn headroom}, and a heat sink with room for an hour of the call in both power and volume, \autoref{eq:3.4.1 dn sink power} and \autoref{eq:3.4.1 dn sink energy}:
 \begin{align}
     K^{\downarrow}_t &\leq \bar{E}^{\text{conc}} - s_t && \forall t \in \mathcal{T} \label{eq:3.4.1 dn headroom} \\
     \eta^{\text{eb}} (1 - \alpha^{\downarrow}_t) K^{\downarrow}_t &\leq (\bar{P}^{\text{acc}} - \text{ch}_t) + (\bar{Q}^{\text{dump}} - q^{\text{dump}}_t) && \forall t \in \mathcal{T} \label{eq:3.4.1 dn sink power} \\
